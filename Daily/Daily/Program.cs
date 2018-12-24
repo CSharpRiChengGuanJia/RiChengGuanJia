@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Daily
+namespace Daily.Forms
 {
     static class Program
     {
@@ -16,7 +16,10 @@ namespace Daily
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new LoginForm());
+            Application.Run(new MainForm());
+            //LoginForm login = new LoginForm();
+            //login.ShowDialog();
         }
     }
 }
