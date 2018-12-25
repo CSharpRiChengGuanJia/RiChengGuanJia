@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelTop = new System.Windows.Forms.Panel();
-            this.circularButtonDown = new Daily.CircularButton();
-            this.circularButtonTheme = new Daily.CircularButton();
-            this.circularButtonMinus = new Daily.CircularButton();
-            this.circularButtonExit = new Daily.CircularButton();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelTop = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,12 +40,16 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sHOWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.circularPictureBox1 = new Daily.CircularPictureBox();
+            this.circularButtonDown = new Daily.CircularButton();
+            this.circularButtonTheme = new Daily.CircularButton();
+            this.circularButtonMinus = new Daily.CircularButton();
+            this.circularButtonExit = new Daily.CircularButton();
             this.ellipseControlOut = new Daily.UI.EllipseControl();
             this.dragControl1 = new Daily.DragControl();
             this.dragControl2 = new Daily.DragControl();
             this.dragControl3 = new Daily.DragControl();
             this.dragControl4 = new Daily.DragControl();
-            this.circularPictureBox1 = new Daily.CircularPictureBox();
             this.calendarPage1 = new Daily.Custom_Control.CalendarPage();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,64 +72,6 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(900, 35);
             this.panelTop.TabIndex = 0;
-            // 
-            // circularButtonDown
-            // 
-            this.circularButtonDown.FlatAppearance.BorderSize = 0;
-            this.circularButtonDown.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.circularButtonDown.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
-            this.circularButtonDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circularButtonDown.Image = ((System.Drawing.Image)(resources.GetObject("circularButtonDown.Image")));
-            this.circularButtonDown.Location = new System.Drawing.Point(779, 2);
-            this.circularButtonDown.Margin = new System.Windows.Forms.Padding(2);
-            this.circularButtonDown.Name = "circularButtonDown";
-            this.circularButtonDown.Size = new System.Drawing.Size(29, 29);
-            this.circularButtonDown.TabIndex = 5;
-            this.circularButtonDown.UseVisualStyleBackColor = true;
-            this.circularButtonDown.Click += new System.EventHandler(this.circularButtonDown_Click);
-            // 
-            // circularButtonTheme
-            // 
-            this.circularButtonTheme.FlatAppearance.BorderSize = 0;
-            this.circularButtonTheme.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.circularButtonTheme.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
-            this.circularButtonTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circularButtonTheme.Image = ((System.Drawing.Image)(resources.GetObject("circularButtonTheme.Image")));
-            this.circularButtonTheme.Location = new System.Drawing.Point(696, 2);
-            this.circularButtonTheme.Margin = new System.Windows.Forms.Padding(2);
-            this.circularButtonTheme.Name = "circularButtonTheme";
-            this.circularButtonTheme.Size = new System.Drawing.Size(29, 29);
-            this.circularButtonTheme.TabIndex = 5;
-            this.circularButtonTheme.UseVisualStyleBackColor = true;
-            this.circularButtonTheme.Click += new System.EventHandler(this.circularButtonTheme_Click);
-            // 
-            // circularButtonMinus
-            // 
-            this.circularButtonMinus.FlatAppearance.BorderSize = 0;
-            this.circularButtonMinus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
-            this.circularButtonMinus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
-            this.circularButtonMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circularButtonMinus.Image = ((System.Drawing.Image)(resources.GetObject("circularButtonMinus.Image")));
-            this.circularButtonMinus.Location = new System.Drawing.Point(816, 2);
-            this.circularButtonMinus.Name = "circularButtonMinus";
-            this.circularButtonMinus.Size = new System.Drawing.Size(29, 29);
-            this.circularButtonMinus.TabIndex = 4;
-            this.circularButtonMinus.UseVisualStyleBackColor = true;
-            this.circularButtonMinus.Click += new System.EventHandler(this.circularButtonMinus_Click_1);
-            // 
-            // circularButtonExit
-            // 
-            this.circularButtonExit.FlatAppearance.BorderSize = 0;
-            this.circularButtonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.circularButtonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.circularButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circularButtonExit.Image = ((System.Drawing.Image)(resources.GetObject("circularButtonExit.Image")));
-            this.circularButtonExit.Location = new System.Drawing.Point(853, 2);
-            this.circularButtonExit.Name = "circularButtonExit";
-            this.circularButtonExit.Size = new System.Drawing.Size(29, 29);
-            this.circularButtonExit.TabIndex = 3;
-            this.circularButtonExit.UseVisualStyleBackColor = true;
-            this.circularButtonExit.Click += new System.EventHandler(this.circularButtonExit_Click);
             // 
             // labelWelcome
             // 
@@ -211,6 +153,74 @@
             this.eXITToolStripMenuItem.Text = "EXIT";
             this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
             // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
+            this.circularPictureBox1.Location = new System.Drawing.Point(738, 2);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(29, 29);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox1.TabIndex = 4;
+            this.circularPictureBox1.TabStop = false;
+            // 
+            // circularButtonDown
+            // 
+            this.circularButtonDown.FlatAppearance.BorderSize = 0;
+            this.circularButtonDown.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.circularButtonDown.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
+            this.circularButtonDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circularButtonDown.Image = ((System.Drawing.Image)(resources.GetObject("circularButtonDown.Image")));
+            this.circularButtonDown.Location = new System.Drawing.Point(779, 2);
+            this.circularButtonDown.Margin = new System.Windows.Forms.Padding(2);
+            this.circularButtonDown.Name = "circularButtonDown";
+            this.circularButtonDown.Size = new System.Drawing.Size(29, 29);
+            this.circularButtonDown.TabIndex = 5;
+            this.circularButtonDown.UseVisualStyleBackColor = true;
+            this.circularButtonDown.Click += new System.EventHandler(this.circularButtonDown_Click);
+            // 
+            // circularButtonTheme
+            // 
+            this.circularButtonTheme.FlatAppearance.BorderSize = 0;
+            this.circularButtonTheme.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.circularButtonTheme.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
+            this.circularButtonTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circularButtonTheme.Image = ((System.Drawing.Image)(resources.GetObject("circularButtonTheme.Image")));
+            this.circularButtonTheme.Location = new System.Drawing.Point(696, 2);
+            this.circularButtonTheme.Margin = new System.Windows.Forms.Padding(2);
+            this.circularButtonTheme.Name = "circularButtonTheme";
+            this.circularButtonTheme.Size = new System.Drawing.Size(29, 29);
+            this.circularButtonTheme.TabIndex = 5;
+            this.circularButtonTheme.UseVisualStyleBackColor = true;
+            this.circularButtonTheme.Click += new System.EventHandler(this.circularButtonTheme_Click);
+            // 
+            // circularButtonMinus
+            // 
+            this.circularButtonMinus.FlatAppearance.BorderSize = 0;
+            this.circularButtonMinus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(60)))));
+            this.circularButtonMinus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
+            this.circularButtonMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circularButtonMinus.Image = ((System.Drawing.Image)(resources.GetObject("circularButtonMinus.Image")));
+            this.circularButtonMinus.Location = new System.Drawing.Point(816, 2);
+            this.circularButtonMinus.Name = "circularButtonMinus";
+            this.circularButtonMinus.Size = new System.Drawing.Size(29, 29);
+            this.circularButtonMinus.TabIndex = 4;
+            this.circularButtonMinus.UseVisualStyleBackColor = true;
+            this.circularButtonMinus.Click += new System.EventHandler(this.circularButtonMinus_Click_1);
+            // 
+            // circularButtonExit
+            // 
+            this.circularButtonExit.FlatAppearance.BorderSize = 0;
+            this.circularButtonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.circularButtonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.circularButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circularButtonExit.Image = ((System.Drawing.Image)(resources.GetObject("circularButtonExit.Image")));
+            this.circularButtonExit.Location = new System.Drawing.Point(853, 2);
+            this.circularButtonExit.Name = "circularButtonExit";
+            this.circularButtonExit.Size = new System.Drawing.Size(29, 29);
+            this.circularButtonExit.TabIndex = 3;
+            this.circularButtonExit.UseVisualStyleBackColor = true;
+            this.circularButtonExit.Click += new System.EventHandler(this.circularButtonExit_Click);
+            // 
             // ellipseControlOut
             // 
             this.ellipseControlOut.CornerRadius = 30;
@@ -232,20 +242,10 @@
             // 
             this.dragControl4.SelectControl = this.labelWelcome;
             // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
-            this.circularPictureBox1.Location = new System.Drawing.Point(738, 2);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(29, 29);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox1.TabIndex = 4;
-            this.circularPictureBox1.TabStop = false;
-            // 
             // calendarPage1
             // 
             this.calendarPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.calendarPage1.Location = new System.Drawing.Point(0, 37);
+            this.calendarPage1.Location = new System.Drawing.Point(0, 36);
             this.calendarPage1.Name = "calendarPage1";
             this.calendarPage1.Size = new System.Drawing.Size(900, 450);
             this.calendarPage1.TabIndex = 5;
@@ -298,5 +298,5 @@
         private System.Windows.Forms.ToolStripMenuItem sHOWToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eXITToolStripMenuItem;
         private Custom_Control.CalendarPage calendarPage1;
-    }
+    }    
 }

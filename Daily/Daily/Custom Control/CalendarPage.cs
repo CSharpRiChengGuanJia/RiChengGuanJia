@@ -11,6 +11,8 @@ using System.Globalization;
 
 namespace Daily.Custom_Control
 {
+    
+    
     public partial class CalendarPage : UserControl
     {
         public CalendarPage()
@@ -20,32 +22,20 @@ namespace Daily.Custom_Control
         }
         private DateTime dateTime = DateTime.Now;           //获取现在的时间
         private static int year = DateTime.Now.Year;
-        private static int chosenYear = year;
+        public static int chosenYear = year;
         private static int month = DateTime.Now.Month;
-        private static int chosenMonth = month;
+        public static int chosenMonth = month;
         private void CalendarPage_Load(object sender, EventArgs e)
         {
+            DisplayMonth();
             DisplayDay(dateTime);
             #region 设置年月
             labelYear.Text = DateTime.Now.Year.ToString();
             
             chosenYear = year;
             chosenMonth = month;
-            //在此定义一个月的数组方便下面使用
-            Month[] Month = new Month[12];
-            Month[0] = month1;
-            Month[1] = month2;
-            Month[2] = month3;
-            Month[3] = month4;
-            Month[4] = month5;
-            Month[5] = month6;
-            Month[6] = month7;
-            Month[7] = month8;
-            Month[8] = month9;
-            Month[9] = month10;
-            Month[10] = month12;
-            Month[11] = month11;
-          
+           
+
             #endregion
         }
         #region 根据年月获得当月天数  格里历算法
@@ -74,13 +64,35 @@ namespace Daily.Custom_Control
             panelDay.Controls.Add(day);
             
         }
+
+       
+        public void DisplayMonth()
+        {
+
+            Month[] months = new Month[12];
+            for (int m = 0; m < 12; m++)
+            {
+                months[m] = new Month();
+                months[m].Text = (m + 1).ToString();
+                months[m].Name = "month" + (m + 1).ToString();
+                panelTop.Controls.Add(months[m]);
+                months[m].Location = new Point(178 + (46 * m), 42);
+                if (m >= 9)
+                    months[m].label.Location = new Point(months[m].label.Location.X - 5, months[m].label.Location.Y);
+                if ((m + 1) == dateTime.Month)
+                    months[m].BackColor = Color.FromArgb(120, Color.Orange);
+            }
+            
+        }
+        
         
         public void DisplayDay(DateTime datetime)
         {
             panelDay.Controls.Clear();
             int dim = this.daysInMonth(chosenYear, chosenMonth);  //获取选中年月
             Day[] days = new Day[dim];
-            for(int d = 0; d < dim; d++)
+           
+            for (int d = 0; d < dim; d++)
             {
                 days[d] = new Day();
                 days[d].Name = "Day" + (d + 1).ToString();
@@ -113,7 +125,7 @@ namespace Daily.Custom_Control
                 }
             }
         }
-
+        
         #endregion
         private void ButtonPreviousYear_Click(object sender, EventArgs e)
         {
@@ -132,91 +144,19 @@ namespace Daily.Custom_Control
         }
 
 
-        #region 点击月份
+       
 
         
 
-        private void month1_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month1.anyText);
-            
-            DisplayDay(dateTime);
-        }
-
-        private void month2_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month2.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month3_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month3.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month4_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month4.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month5_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month5.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month6_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month6.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month7_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month7.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month8_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month8.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month9_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month9.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month10_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month10.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month11_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month11.anyText);
-            DisplayDay(dateTime);
-        }
-
-        private void month12_Click(object sender, EventArgs e)
-        {
-            chosenMonth = Convert.ToInt32(month12.anyText);
-            DisplayDay(dateTime);
-        }
-        #endregion
+       
 
        
-        private void labelYear_DoubleClick(object sender, EventArgs e)
-        {
-            textBoxYear.BackColor = labelYear.BackColor;
-            textBoxYear.Visible = true;
-            textBoxYear.Location = labelYear.Location;
-        }
+        //private void labelYear_DoubleClick(object sender, EventArgs e)
+        //{
+        //    textBoxYear.BackColor = labelYear.BackColor;
+        //    textBoxYear.Visible = true;
+        //    textBoxYear.Location = labelYear.Location;
+        //}
 
         private void buttonToday_Click(object sender, EventArgs e)
         {
@@ -224,5 +164,12 @@ namespace Daily.Custom_Control
             chosenYear = year;
             DisplayDay(dateTime);
         }
+
+        private void buttonJump_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

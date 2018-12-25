@@ -42,7 +42,6 @@
             this.label.TabIndex = 0;
             this.label.Text = "1";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label.Click += new System.EventHandler(this.label_Click);
             // 
             // ellipseControl1
             // 

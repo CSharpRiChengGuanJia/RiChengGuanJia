@@ -21,3 +21,5 @@ C:\Users\Chris\source\repos\Daily\Daily\obj\Debug\Daily.Forms.MainForm.resources
 C:\Users\Chris\source\repos\Daily\Daily\obj\Debug\Daily.Custom_Control.Month.resources
 C:\Users\Chris\source\repos\Daily\Daily\obj\Debug\Daily.Custom_Control.Week.resources
 C:\Users\Chris\source\repos\Daily\Daily\obj\Debug\Daily.Custom_Control.Day.resources
+C:\Users\Chris\source\repos\Daily\Daily\obj\Debug\Daily.Custom_Control.TaskEditPage.resources
+C:\Users\Chris\source\repos\Daily\Daily\obj\Debug\Daily.Custom_Control.TaskViewPage.resources

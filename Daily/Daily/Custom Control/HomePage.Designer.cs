@@ -49,13 +49,13 @@
             this.timerUp = new System.Windows.Forms.Timer(this.components);
             this.buttonClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.recentTask3 = new Daily.Custom_Control.RecentTask();
+            this.recentTask2 = new Daily.Custom_Control.RecentTask();
+            this.recentTask1 = new Daily.Custom_Control.RecentTask();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelRecent = new System.Windows.Forms.Label();
             this.timerEffect = new System.Windows.Forms.Timer(this.components);
             this.timerEffect2 = new System.Windows.Forms.Timer(this.components);
-            this.recentTask3 = new Daily.Custom_Control.RecentTask();
-            this.recentTask2 = new Daily.Custom_Control.RecentTask();
-            this.recentTask1 = new Daily.Custom_Control.RecentTask();
             this.ButtonTask = new Daily.CircularButton();
             this.ButtonAdd = new Daily.CircularButton();
             this.PictureBoxUser = new Daily.CircularPictureBox();
@@ -285,6 +285,33 @@
             this.panel1.Size = new System.Drawing.Size(205, 197);
             this.panel1.TabIndex = 9;
             // 
+            // recentTask3
+            // 
+            this.recentTask3.BackColor = System.Drawing.Color.Black;
+            this.recentTask3.Location = new System.Drawing.Point(0, 126);
+            this.recentTask3.Margin = new System.Windows.Forms.Padding(4);
+            this.recentTask3.Name = "recentTask3";
+            this.recentTask3.Size = new System.Drawing.Size(205, 45);
+            this.recentTask3.TabIndex = 1;
+            // 
+            // recentTask2
+            // 
+            this.recentTask2.BackColor = System.Drawing.Color.Black;
+            this.recentTask2.Location = new System.Drawing.Point(1, 77);
+            this.recentTask2.Margin = new System.Windows.Forms.Padding(4);
+            this.recentTask2.Name = "recentTask2";
+            this.recentTask2.Size = new System.Drawing.Size(205, 45);
+            this.recentTask2.TabIndex = 1;
+            // 
+            // recentTask1
+            // 
+            this.recentTask1.BackColor = System.Drawing.Color.Black;
+            this.recentTask1.Location = new System.Drawing.Point(0, 27);
+            this.recentTask1.Margin = new System.Windows.Forms.Padding(4);
+            this.recentTask1.Name = "recentTask1";
+            this.recentTask1.Size = new System.Drawing.Size(205, 45);
+            this.recentTask1.TabIndex = 1;
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -315,33 +342,6 @@
             // 
             this.timerEffect2.Interval = 1;
             this.timerEffect2.Tick += new System.EventHandler(this.timerEffect2_Tick);
-            // 
-            // recentTask3
-            // 
-            this.recentTask3.BackColor = System.Drawing.Color.Black;
-            this.recentTask3.Location = new System.Drawing.Point(0, 126);
-            this.recentTask3.Margin = new System.Windows.Forms.Padding(4);
-            this.recentTask3.Name = "recentTask3";
-            this.recentTask3.Size = new System.Drawing.Size(205, 45);
-            this.recentTask3.TabIndex = 1;
-            // 
-            // recentTask2
-            // 
-            this.recentTask2.BackColor = System.Drawing.Color.Black;
-            this.recentTask2.Location = new System.Drawing.Point(1, 77);
-            this.recentTask2.Margin = new System.Windows.Forms.Padding(4);
-            this.recentTask2.Name = "recentTask2";
-            this.recentTask2.Size = new System.Drawing.Size(205, 45);
-            this.recentTask2.TabIndex = 1;
-            // 
-            // recentTask1
-            // 
-            this.recentTask1.BackColor = System.Drawing.Color.Black;
-            this.recentTask1.Location = new System.Drawing.Point(0, 27);
-            this.recentTask1.Margin = new System.Windows.Forms.Padding(4);
-            this.recentTask1.Name = "recentTask1";
-            this.recentTask1.Size = new System.Drawing.Size(205, 45);
-            this.recentTask1.TabIndex = 1;
             // 
             // ButtonTask
             // 

@@ -19,10 +19,5 @@ namespace Daily.Custom_Control
             label.BackColor = Color.FromArgb(0, Color.Black);
             this.BackColor = Color.FromArgb(60, Color.Black);
         }
-
-        private void label_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -44,6 +44,8 @@
             this.label.Text = "1";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label.Click += new System.EventHandler(this.label_Click);
+            this.label.MouseEnter += new System.EventHandler(this.label_MouseEnter);
+            this.label.MouseLeave += new System.EventHandler(this.label_MouseLeave);
             // 
             // ellipseControl1
             // 
@@ -61,14 +63,16 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Name = "Month";
             this.Size = new System.Drawing.Size(37, 37);
+            this.Click += new System.EventHandler(this.Month_Click);
+            this.MouseEnter += new System.EventHandler(this.Month_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.Month_MouseLeave);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label;
         private UI.EllipseControl ellipseControl1;
+        public System.Windows.Forms.Label label;
     }
 }

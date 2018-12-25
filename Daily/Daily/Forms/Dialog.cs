@@ -33,9 +33,19 @@ namespace Daily.Forms
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            notifyDispose();
-            this.Dispose();
-            Environment.Exit(0);
+            try
+            {
+                notifyDispose();
+                this.Dispose();
+                Environment.Exit(0);
+            }
+            catch(Exception ex)
+            {
+                this.Dispose();
+                Environment.Exit(0);
+            }
+            
+           
         }
 
         private void buttonClose_Click(object sender, EventArgs e)

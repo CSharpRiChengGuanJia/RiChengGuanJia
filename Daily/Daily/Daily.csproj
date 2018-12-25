@@ -96,6 +96,12 @@
     <Compile Include="Custom Control\RecentTask.Designer.cs">
       <DependentUpon>RecentTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Custom Control\TaskViewPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Control\TaskViewPage.Designer.cs">
+      <DependentUpon>TaskViewPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Custom Control\Week.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +134,17 @@
     <Compile Include="Custom Control\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <Compile Include="Custom Control\TaskEditPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Control\TaskEditPage.Designer.cs">
+      <DependentUpon>TaskEditPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSetting.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UserSetting.settings</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Custom Control\CalendarPage.resx">
       <DependentUpon>CalendarPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Custom Control\RecentTask.resx">
       <DependentUpon>RecentTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Control\TaskViewPage.resx">
+      <DependentUpon>TaskViewPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Custom Control\Week.resx">
       <DependentUpon>Week.cs</DependentUpon>
@@ -167,6 +187,9 @@
     <EmbeddedResource Include="Custom Control\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Custom Control\TaskEditPage.resx">
+      <DependentUpon>TaskEditPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -176,12 +199,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UserSetting.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UserSetting.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Content Include="Resources\Checked.png" />
+    <Content Include="Resources\Unchecked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -80,7 +80,7 @@ namespace Daily.Custom_Control
             
                 
                 this.Height = this.Height - 26;
-                this.Refresh();
+                //this.Refresh();
                 
             }
             else
