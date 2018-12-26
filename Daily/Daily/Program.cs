@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Daily.Forms
+namespace Daily
 {
     static class Program
     {
@@ -16,10 +16,7 @@ namespace Daily.Forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            Application.Run(new MainForm());
-            //LoginForm login = new LoginForm();
-            //login.ShowDialog();
+            Application.Run(new Form1(DailyManager.GetDaily(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day))); //刚打开应用程序显示的就是系统时间的今天的日程
         }
     }
 }

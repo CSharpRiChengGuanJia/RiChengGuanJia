@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85FAA66B-B4C1-460C-A94B-8F4CCAA1B11B}</ProjectGuid>
+    <ProjectGuid>{F58BC468-A1ED-4AD2-8798-53C1BFB681A6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Daily</RootNamespace>
     <AssemblyName>Daily</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,16 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\Desktop\Materials\Bunifu_UI_v1.52.dll</HintPath>
-    </Reference>
-    <Reference Include="CSkin">
-      <HintPath>..\..\..\..\Documents\CSkin 4.0\CSkin.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,126 +45,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Custom Control\CalendarPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Custom Control\CalendarPage.Designer.cs">
-      <DependentUpon>CalendarPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Custom Control\CircularButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Custom Control\CircularPictureBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Custom Control\Day.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Custom Control\Day.Designer.cs">
-      <DependentUpon>Day.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Custom Control\DragControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Custom Control\EllipseControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Custom Control\HomePage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Custom Control\HomePage.Designer.cs">
-      <DependentUpon>HomePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Custom Control\Month.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Custom Control\Month.Designer.cs">
-      <DependentUpon>Month.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Custom Control\RecentTask.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Custom Control\RecentTask.Designer.cs">
-      <DependentUpon>RecentTask.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Custom Control\TaskViewPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Custom Control\TaskViewPage.Designer.cs">
-      <DependentUpon>TaskViewPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Custom Control\Week.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Custom Control\Week.Designer.cs">
-      <DependentUpon>Week.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Dialog.cs">
+    <Compile Include="DailyEntity.cs" />
+    <Compile Include="DailyManager.cs" />
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dialog.Designer.cs">
-      <DependentUpon>Dialog.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginForm.cs">
+    <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVariable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Custom Control\User.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Custom Control\User.Designer.cs">
-      <DependentUpon>User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Custom Control\TaskEditPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Custom Control\TaskEditPage.Designer.cs">
-      <DependentUpon>TaskEditPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserSetting.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>UserSetting.settings</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Custom Control\CalendarPage.resx">
-      <DependentUpon>CalendarPage.cs</DependentUpon>
+    <Compile Include="TaskEntity.cs" />
+    <Compile Include="TaskManager.cs" />
+    <Compile Include="WorkEntity.cs" />
+    <Compile Include="WorkManager.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\Day.resx">
-      <DependentUpon>Day.cs</DependentUpon>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\HomePage.resx">
-      <DependentUpon>HomePage.cs</DependentUpon>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\Month.resx">
-      <DependentUpon>Month.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\RecentTask.resx">
-      <DependentUpon>RecentTask.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\TaskViewPage.resx">
-      <DependentUpon>TaskViewPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\Week.resx">
-      <DependentUpon>Week.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialog.resx">
-      <DependentUpon>Dialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -184,12 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Custom Control\User.resx">
-      <DependentUpon>User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Custom Control\TaskEditPage.resx">
-      <DependentUpon>TaskEditPage.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="Properties\DataSources\DailyEntity.datasource" />
+    <None Include="Properties\DataSources\TaskEntity.datasource" />
+    <None Include="Properties\DataSources\WorkEntity.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -199,18 +111,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="UserSetting.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>UserSetting.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Resources\Checked.png" />
-    <Content Include="Resources\Unchecked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
