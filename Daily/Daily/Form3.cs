@@ -51,11 +51,18 @@ namespace Daily
             DateTime starttime = new DateTime(f1.thisDay.Year, f1.thisDay.Month, f1.thisDay.Day, dateTimePicker1.Value.Hour, dateTimePicker1.Value.Minute, dateTimePicker1.Value.Second);
             DateTime endtime = new DateTime(f1.thisDay.Year, f1.thisDay.Month, f1.thisDay.Day, dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, dateTimePicker2.Value.Second);
             int level = Int32.Parse(comboBox1.Text);
-            string content = richTextBox1.Text;            
-            WorkEntity newwork = new WorkEntity(workname, starttime, endtime, level, content, f1.thisDay);
-            WorkManager.AddWork(f1.thisDay, newwork);
-            f1.Renew();
-            this.Close();
+            string content = richTextBox1.Text;
+            if (starttime < endtime)
+            {
+                WorkEntity newwork = new WorkEntity(workname, starttime, endtime, level, content, f1.thisDay);
+                WorkManager.AddWork(f1.thisDay, newwork);
+                f1.Renew();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("时间输入错误", "ERROR");
+            }   
         }
     }
 }

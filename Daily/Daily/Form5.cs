@@ -36,11 +36,19 @@ namespace Daily
             DateTime endtime = dateTimePicker2.Value;
             int level = Int32.Parse(comboBox1.Text);
             string content = richTextBox1.Text;
-            DailyEntity workDay = DailyManager.GetDaily(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
-            WorkEntity newwork = new WorkEntity(workname, starttime, endtime, level, content, workDay);
-            WorkManager.AddWork(workDay, newwork);
-            f1.Renew();
-            this.Close();
+            if (starttime < endtime)
+            {
+                DailyEntity workDay = DailyManager.GetDaily(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
+                WorkEntity newwork = new WorkEntity(workname, starttime, endtime, level, content, workDay);
+                WorkManager.AddWork(workDay, newwork);
+                f1.Renew();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("时间输入错误", "ERROR");
+            }
+          
         }
     }
 }
