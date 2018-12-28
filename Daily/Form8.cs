@@ -28,7 +28,8 @@ namespace Daily
             DateTime endtime = dateTimePicker1.Value;
             int lev = Int32.Parse(comboBox1.Text);
             string content = richTextBox1.Text;
-            TaskManager.AddTask(new TaskEntity(taskname, endtime, lev, content));
+            //TaskManager.AddTask(new TaskEntity(taskname, endtime, lev, content));
+            TaskManagerDB.AddTask(new TaskEntity(taskname, endtime, lev, content));
             f1.Recenttasks = TaskManager.ChooseTasks(f1.thisDay);
             f1.Renew();
             this.Close();

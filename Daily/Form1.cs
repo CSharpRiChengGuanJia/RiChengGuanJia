@@ -114,7 +114,8 @@ namespace Daily
                     break;
                 }
             }
-            TaskManager.DelTask(ta);
+            //TaskManager.DelTask(ta);
+            TaskManagerDB.DelTask(ta);
             Renew();
         }
         //编辑事务

@@ -67,17 +67,14 @@ namespace Daily
         /// </summary>
         public static void TestInit2()
         {
-            DateTime now = DateTime.Now;
-            DailyEntity today = DailyManager.GetDaily(now.Year, now.Month, now.Day);
-            TaskEntity task1 = new TaskEntity("汉姆", new DateTime(2019, 7, 1), 1, "天天跑步");
-            TaskEntity task2 = new TaskEntity("上学", new DateTime(2017, 6, 1), 2, "天天上学");
-            TaskManager.AddTask(task1);
-            TaskManager.AddTask(task2);
-            TaskManager.SortTasks();
-            List<WorkEntity> tmpworklist = new List<WorkEntity>();
+            //DateTime now = DateTime.Now;
+            //DailyEntity today = DailyManager.GetDaily(now.Year, now.Month, now.Day);
             //WorkEntity work3 = new WorkEntity("图书馆自习", new DateTime(today.Year, today.Month, today.Day, 18, 30, now.Second),
             //    new DateTime(today.Year, today.Month, today.Day, 21, 30, 0), 5, "信图3楼东社会科学区046号", today);
             //WorkManagerDB.AddWork(today, work3);
+            List<WorkEntity> tmpworklist = new List<WorkEntity>();
+            List<TaskEntity> tmptasklist = new List<TaskEntity>();
+            
             using (var db = new DailyDB())
             {
                 db.WorkEntity.ToList<WorkEntity>();
@@ -86,7 +83,15 @@ namespace Daily
             foreach(WorkEntity work in tmpworklist)
             {
                 WorkManager.AddWork(DailyManager.GetDaily(work.StartTime.Year, work.StartTime.Month, work.StartTime.Day), work);
-
+            }
+            using (var db = new DailyDB())
+            {
+                db.TaskEntity.ToList<TaskEntity>();
+                tmptasklist = db.TaskEntity.ToList<TaskEntity>();
+            }
+            foreach (TaskEntity task in tmptasklist)
+            {
+                TaskManager.AddTask(task);
             }
 
         }

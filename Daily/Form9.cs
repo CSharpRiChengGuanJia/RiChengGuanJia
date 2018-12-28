@@ -39,13 +39,15 @@ namespace Daily
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TaskManager.DelTask(ModifyTask);
-           string taskname = textBox1.Text;
+            //TaskManager.DelTask(ModifyTask);
+            TaskManagerDB.DelTask(ModifyTask);
+            string taskname = textBox1.Text;
             int lev = Int32.Parse(comboBox1.Text);
             DateTime end = dateTimePicker1.Value;
             string cont = richTextBox1.Text;
             TaskEntity newTask = new TaskEntity(taskname, end , lev,cont);
-            TaskManager.AddTask(newTask);
+            //TaskManager.AddTask(newTask);
+            TaskManagerDB.AddTask(newTask);
             f1.Recenttasks = TaskManager.ChooseTasks(f1.thisDay);
             f1.Renew();
             this.Close();
