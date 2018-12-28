@@ -56,6 +56,11 @@ namespace Daily
         {
             return dataGridView1.CurrentRow.Cells[6].Value.ToString();
         }
+        //获取事务一览中的id
+        public string GetId1()
+        {
+            return dataGridView3.CurrentRow.Cells[6].Value.ToString();
+        }
 
         //添加事务
         private void button1_Click(object sender, EventArgs e)
@@ -136,6 +141,43 @@ namespace Daily
         {
             Form4 f4 = new Form4(this);
             f4.ShowDialog();
+        }
+
+        //事务一览界面添加任务
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form7 f7 = new Form7(this);
+            f7.ShowDialog();
+        }
+
+        //事务一览界面添加事务
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5(this);
+            f5.ShowDialog();
+        }
+
+        //事务一览界面编辑事务
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Form6 f6 = new Form6(this);
+            f6.ShowDialog();
+        }
+
+        //事务一览界面删除事务
+        private void button14_Click(object sender, EventArgs e)
+        {
+            WorkEntity workToDel = null;
+            foreach (WorkEntity work in GlobalVariable.AllWorks)
+            {
+                if (work.ID == GetId1())
+                {
+                    workToDel = work;
+                    break;
+                }
+            }
+            WorkManager.DelWork(workToDel);
+            Renew();
         }
     }
 }
