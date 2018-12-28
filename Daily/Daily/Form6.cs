@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Daily
 {
-    public partial class Form3 : Form
+    public partial class Form6 : Form
     {
         Form1 f1;
         string id = "";
         WorkEntity workToModify = null;
-        public Form3()
+        public Form6()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
-        public Form3(Form1 f1) : this()
+        public Form6(Form1 f1) : this()
         {
             this.f1 = f1;
-            id = f1.GetId(); 
+            id = f1.GetId1();
             foreach (WorkEntity work in GlobalVariable.AllWorks)
             {
                 if (work.ID == id)
@@ -45,15 +45,15 @@ namespace Daily
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //其实编辑事务就是新建一个事务同时然后删掉原来那个事务
             WorkManager.DelWork(workToModify);
             string workname = textBox1.Text;
-            DateTime starttime = new DateTime(f1.thisDay.Year, f1.thisDay.Month, f1.thisDay.Day, dateTimePicker1.Value.Hour, dateTimePicker1.Value.Minute, dateTimePicker1.Value.Second);
-            DateTime endtime = new DateTime(f1.thisDay.Year, f1.thisDay.Month, f1.thisDay.Day, dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, dateTimePicker2.Value.Second);
+            DateTime starttime = dateTimePicker1.Value;
+            DateTime endtime = dateTimePicker2.Value;
             int level = Int32.Parse(comboBox1.Text);
-            string content = richTextBox1.Text;            
-            WorkEntity newwork = new WorkEntity(workname, starttime, endtime, level, content, f1.thisDay);
-            WorkManager.AddWork(f1.thisDay, newwork);
+            string content = richTextBox1.Text;
+            DailyEntity workDay = DailyManager.GetDaily(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
+            WorkEntity newwork = new WorkEntity(workname, starttime, endtime, level, content, workDay);
+            WorkManager.AddWork(workDay, newwork);
             f1.Renew();
             this.Close();
         }
