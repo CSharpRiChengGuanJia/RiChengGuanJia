@@ -39,6 +39,8 @@ namespace Daily
             //AllDailys这个dictionary里的key
             return $"{Year}Y{Month}M{Day}D";
         }
+        //对一日事务都进行排序
+        
         #region 构造函数
         /// <summary>
         /// 构造函数

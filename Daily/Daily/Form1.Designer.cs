@@ -38,6 +38,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taskNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isEndDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.workNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +75,13 @@
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.workEntityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isEndDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,24 +93,15 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.workEntityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dailyEntityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workEntityBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.levelDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isEndDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -105,13 +109,13 @@
             this.tabPage4.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workEntityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource4)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workEntityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dailyEntityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workEntityBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,8 +123,9 @@
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(964, 469);
+            this.panel1.Size = new System.Drawing.Size(1285, 586);
             this.panel1.TabIndex = 0;
             // 
             // tabControl1
@@ -133,9 +138,10 @@
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.HotTrack = true;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(964, 469);
+            this.tabControl1.Size = new System.Drawing.Size(1285, 586);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -150,19 +156,21 @@
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(956, 443);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(1277, 557);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "当日日程";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(518, 266);
+            this.button8.Location = new System.Drawing.Point(691, 332);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(66, 23);
+            this.button8.Size = new System.Drawing.Size(88, 29);
             this.button8.TabIndex = 10;
             this.button8.Text = "后一天→";
             this.button8.UseVisualStyleBackColor = true;
@@ -170,9 +178,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(425, 266);
+            this.button7.Location = new System.Drawing.Point(567, 332);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(65, 23);
+            this.button7.Size = new System.Drawing.Size(87, 29);
             this.button7.TabIndex = 9;
             this.button7.Text = "←前一天";
             this.button7.UseVisualStyleBackColor = true;
@@ -180,9 +189,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(774, 245);
+            this.button6.Location = new System.Drawing.Point(1032, 306);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(100, 29);
             this.button6.TabIndex = 8;
             this.button6.Text = "Home";
             this.button6.UseVisualStyleBackColor = true;
@@ -192,9 +202,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(383, 244);
+            this.label5.Location = new System.Drawing.Point(511, 305);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(246, 19);
+            this.label5.Size = new System.Drawing.Size(298, 24);
             this.label5.TabIndex = 7;
             this.label5.Text = "xxxx年 xx月 xx日 weekday";
             // 
@@ -202,9 +213,11 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(3, 287);
+            this.groupBox2.Location = new System.Drawing.Point(4, 362);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(950, 153);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(1269, 191);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "近期任务";
@@ -214,26 +227,70 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
+            this.iDDataGridViewTextBoxColumn,
+            this.taskNameDataGridViewTextBoxColumn,
             this.endTimeDataGridViewTextBoxColumn1,
             this.levelDataGridViewTextBoxColumn1,
             this.contentDataGridViewTextBoxColumn1,
             this.isEndDataGridViewCheckBoxColumn1});
             this.dataGridView2.DataSource = this.bindingSource2;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView2.Location = new System.Drawing.Point(4, 22);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(944, 133);
+            this.dataGridView2.Size = new System.Drawing.Size(1261, 165);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // taskNameDataGridViewTextBoxColumn
+            // 
+            this.taskNameDataGridViewTextBoxColumn.DataPropertyName = "TaskName";
+            this.taskNameDataGridViewTextBoxColumn.HeaderText = "TaskName";
+            this.taskNameDataGridViewTextBoxColumn.Name = "taskNameDataGridViewTextBoxColumn";
+            // 
+            // endTimeDataGridViewTextBoxColumn1
+            // 
+            this.endTimeDataGridViewTextBoxColumn1.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn1.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn1.Name = "endTimeDataGridViewTextBoxColumn1";
+            // 
+            // levelDataGridViewTextBoxColumn1
+            // 
+            this.levelDataGridViewTextBoxColumn1.DataPropertyName = "Level";
+            this.levelDataGridViewTextBoxColumn1.HeaderText = "Level";
+            this.levelDataGridViewTextBoxColumn1.Name = "levelDataGridViewTextBoxColumn1";
+            // 
+            // contentDataGridViewTextBoxColumn1
+            // 
+            this.contentDataGridViewTextBoxColumn1.DataPropertyName = "Content";
+            this.contentDataGridViewTextBoxColumn1.HeaderText = "Content";
+            this.contentDataGridViewTextBoxColumn1.Name = "contentDataGridViewTextBoxColumn1";
+            // 
+            // isEndDataGridViewCheckBoxColumn1
+            // 
+            this.isEndDataGridViewCheckBoxColumn1.DataPropertyName = "IsEnd";
+            this.isEndDataGridViewCheckBoxColumn1.HeaderText = "IsEnd";
+            this.isEndDataGridViewCheckBoxColumn1.Name = "isEndDataGridViewCheckBoxColumn1";
+            // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataSource = typeof(Daily.TaskEntity);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(950, 236);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1269, 295);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "今日事务";
@@ -253,10 +310,11 @@
             this.ID});
             this.dataGridView1.DataSource = this.bindingSource1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 22);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(944, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(1261, 265);
             this.dataGridView1.TabIndex = 0;
             // 
             // workNameDataGridViewTextBoxColumn
@@ -310,9 +368,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(663, 245);
+            this.button4.Location = new System.Drawing.Point(884, 306);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(100, 29);
             this.button4.TabIndex = 4;
             this.button4.Text = "导入日程";
             this.button4.UseVisualStyleBackColor = true;
@@ -320,9 +379,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(253, 245);
+            this.button3.Location = new System.Drawing.Point(337, 306);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 29);
             this.button3.TabIndex = 3;
             this.button3.Text = "删除事务";
             this.button3.UseVisualStyleBackColor = true;
@@ -330,9 +390,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(153, 245);
+            this.button2.Location = new System.Drawing.Point(204, 306);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 29);
             this.button2.TabIndex = 2;
             this.button2.Text = "编辑事务";
             this.button2.UseVisualStyleBackColor = true;
@@ -340,9 +401,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(47, 245);
+            this.button1.Location = new System.Drawing.Point(63, 306);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 29);
             this.button1.TabIndex = 1;
             this.button1.Text = "添加事务";
             this.button1.UseVisualStyleBackColor = true;
@@ -350,10 +412,11 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(956, 443);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(1277, 557);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "一周日程";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -368,19 +431,21 @@
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Controls.Add(this.textBox1);
             this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(956, 443);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Size = new System.Drawing.Size(1277, 557);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "查看日历";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(264, 236);
+            this.button5.Location = new System.Drawing.Point(352, 295);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(100, 29);
             this.button5.TabIndex = 7;
             this.button5.Text = "确定";
             this.button5.UseVisualStyleBackColor = true;
@@ -389,58 +454,65 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(188, 192);
+            this.label4.Location = new System.Drawing.Point(251, 240);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "日：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(188, 153);
+            this.label3.Location = new System.Drawing.Point(251, 191);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "月：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(188, 116);
+            this.label2.Location = new System.Drawing.Point(251, 145);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "年：";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(254, 189);
+            this.textBox3.Location = new System.Drawing.Point(339, 236);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
+            this.textBox3.Size = new System.Drawing.Size(132, 25);
             this.textBox3.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(254, 150);
+            this.textBox2.Location = new System.Drawing.Point(339, 188);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.Size = new System.Drawing.Size(132, 25);
             this.textBox2.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(254, 113);
+            this.textBox1.Location = new System.Drawing.Point(339, 141);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.Size = new System.Drawing.Size(132, 25);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(169, 76);
+            this.label1.Location = new System.Drawing.Point(225, 95);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(533, 12);
+            this.label1.Size = new System.Drawing.Size(667, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "输入要进入的日期的年月日：（暂时用这个代替日历，到时候直接点击日历中的某一个日期来传值）";
             // 
@@ -451,81 +523,131 @@
             this.tabPage4.Controls.Add(this.button11);
             this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Controls.Add(this.groupBox3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(956, 443);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Size = new System.Drawing.Size(1277, 557);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "事务一览";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(265, 249);
+            this.button9.Location = new System.Drawing.Point(353, 311);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.Size = new System.Drawing.Size(100, 29);
             this.button9.TabIndex = 10;
             this.button9.Text = "删除任务";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(165, 249);
+            this.button10.Location = new System.Drawing.Point(220, 311);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.Size = new System.Drawing.Size(100, 29);
             this.button10.TabIndex = 9;
             this.button10.Text = "编辑任务";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(59, 249);
+            this.button11.Location = new System.Drawing.Point(79, 311);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.Size = new System.Drawing.Size(100, 29);
             this.button11.TabIndex = 8;
             this.button11.Text = "添加任务";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridView4);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox4.Location = new System.Drawing.Point(3, 287);
+            this.groupBox4.Location = new System.Drawing.Point(4, 362);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(950, 153);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Size = new System.Drawing.Size(1269, 191);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "全部任务";
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AllowUserToOrderColumns = true;
             this.dataGridView4.AutoGenerateColumns = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TaskName,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewCheckBoxColumn2});
-            this.dataGridView4.DataSource = this.bindingSource2;
+            this.iDDataGridViewTextBoxColumn2,
+            this.endTimeDataGridViewTextBoxColumn2,
+            this.levelDataGridViewTextBoxColumn2,
+            this.contentDataGridViewTextBoxColumn2,
+            this.isEndDataGridViewCheckBoxColumn2});
+            this.dataGridView4.DataSource = this.bindingSource4;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView4.Location = new System.Drawing.Point(4, 22);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowTemplate.Height = 23;
-            this.dataGridView4.Size = new System.Drawing.Size(944, 133);
+            this.dataGridView4.Size = new System.Drawing.Size(1261, 165);
             this.dataGridView4.TabIndex = 0;
             // 
-            // workEntityBindingSource
+            // TaskName
             // 
-            this.workEntityBindingSource.DataSource = typeof(Daily.WorkEntity);
+            this.TaskName.DataPropertyName = "TaskName";
+            this.TaskName.HeaderText = "TaskName";
+            this.TaskName.Name = "TaskName";
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            // 
+            // endTimeDataGridViewTextBoxColumn2
+            // 
+            this.endTimeDataGridViewTextBoxColumn2.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn2.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn2.Name = "endTimeDataGridViewTextBoxColumn2";
+            // 
+            // levelDataGridViewTextBoxColumn2
+            // 
+            this.levelDataGridViewTextBoxColumn2.DataPropertyName = "Level";
+            this.levelDataGridViewTextBoxColumn2.HeaderText = "Level";
+            this.levelDataGridViewTextBoxColumn2.Name = "levelDataGridViewTextBoxColumn2";
+            // 
+            // contentDataGridViewTextBoxColumn2
+            // 
+            this.contentDataGridViewTextBoxColumn2.DataPropertyName = "Content";
+            this.contentDataGridViewTextBoxColumn2.HeaderText = "Content";
+            this.contentDataGridViewTextBoxColumn2.Name = "contentDataGridViewTextBoxColumn2";
+            // 
+            // isEndDataGridViewCheckBoxColumn2
+            // 
+            this.isEndDataGridViewCheckBoxColumn2.DataPropertyName = "IsEnd";
+            this.isEndDataGridViewCheckBoxColumn2.HeaderText = "IsEnd";
+            this.isEndDataGridViewCheckBoxColumn2.Name = "isEndDataGridViewCheckBoxColumn2";
+            // 
+            // bindingSource4
+            // 
+            this.bindingSource4.DataSource = typeof(Daily.TaskEntity);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView3);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Location = new System.Drawing.Point(4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(950, 236);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(1269, 295);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "全部事务";
@@ -545,10 +667,11 @@
             this.dataGridViewTextBoxColumn6});
             this.dataGridView3.DataSource = this.bindingSource3;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView3.Location = new System.Drawing.Point(4, 22);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(944, 212);
+            this.dataGridView3.Size = new System.Drawing.Size(1261, 265);
             this.dataGridView3.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -602,12 +725,17 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(956, 443);
+            this.tabPage5.Size = new System.Drawing.Size(1277, 557);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "系统设置";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // workEntityBindingSource
+            // 
+            this.workEntityBindingSource.DataSource = typeof(Daily.WorkEntity);
             // 
             // dailyEntityBindingSource
             // 
@@ -617,76 +745,13 @@
             // 
             this.workEntityBindingSource1.DataSource = typeof(Daily.WorkEntity);
             // 
-            // bindingSource2
-            // 
-            this.bindingSource2.DataSource = typeof(Daily.TaskEntity);
-            // 
-            // TaskName
-            // 
-            this.TaskName.DataPropertyName = "TaskName";
-            this.TaskName.HeaderText = "TaskName";
-            this.TaskName.Name = "TaskName";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "EndTime";
-            this.dataGridViewTextBoxColumn9.HeaderText = "EndTime";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Level";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Level";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Content";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Content";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "IsEnd";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "IsEnd";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "TaskName";
-            this.dataGridViewTextBoxColumn7.HeaderText = "TaskName";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // endTimeDataGridViewTextBoxColumn1
-            // 
-            this.endTimeDataGridViewTextBoxColumn1.DataPropertyName = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn1.HeaderText = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn1.Name = "endTimeDataGridViewTextBoxColumn1";
-            // 
-            // levelDataGridViewTextBoxColumn1
-            // 
-            this.levelDataGridViewTextBoxColumn1.DataPropertyName = "Level";
-            this.levelDataGridViewTextBoxColumn1.HeaderText = "Level";
-            this.levelDataGridViewTextBoxColumn1.Name = "levelDataGridViewTextBoxColumn1";
-            // 
-            // contentDataGridViewTextBoxColumn1
-            // 
-            this.contentDataGridViewTextBoxColumn1.DataPropertyName = "Content";
-            this.contentDataGridViewTextBoxColumn1.HeaderText = "Content";
-            this.contentDataGridViewTextBoxColumn1.Name = "contentDataGridViewTextBoxColumn1";
-            // 
-            // isEndDataGridViewCheckBoxColumn1
-            // 
-            this.isEndDataGridViewCheckBoxColumn1.DataPropertyName = "IsEnd";
-            this.isEndDataGridViewCheckBoxColumn1.HeaderText = "IsEnd";
-            this.isEndDataGridViewCheckBoxColumn1.Name = "isEndDataGridViewCheckBoxColumn1";
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 469);
+            this.ClientSize = new System.Drawing.Size(1285, 586);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "日程管家";
             this.panel1.ResumeLayout(false);
@@ -695,6 +760,7 @@
             this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -703,13 +769,13 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workEntityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource4)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workEntityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dailyEntityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workEntityBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -782,6 +848,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.BindingSource bindingSource4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taskNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn levelDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isEndDataGridViewCheckBoxColumn2;
     }
 }
 

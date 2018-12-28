@@ -46,15 +46,21 @@ namespace Daily
             DateTime now = DateTime.Now;
             DailyEntity today = DailyManager.GetDaily(now.Year, now.Month, now.Day);
             //DailyManager.AddDaily(today);
-            WorkEntity work1 = new WorkEntity("午睡", new DateTime(today.Year, today.Month, today.Day, 12, 45, 0),
+            WorkEntity work1 = new WorkEntity("午睡", new DateTime(today.Year, today.Month, today.Day, 15, 45, 0),
                 new DateTime(today.Year, today.Month, today.Day, 13, 45, 0), 5, "午睡。。。", today);
             WorkEntity work2 = new WorkEntity("写形策论文", new DateTime(today.Year, today.Month, today.Day, 14, 00, 0),
                 new DateTime(today.Year, today.Month, today.Day, 15, 30, 0), 5, "截止日期25日，详情见班群通知", today);
             WorkEntity work3 = new WorkEntity("图书馆自习", new DateTime(today.Year, today.Month, today.Day, 18, 30, 0),
                 new DateTime(today.Year, today.Month, today.Day, 21, 30, 0), 5, "信图3楼东社会科学区046号", today);
+            TaskEntity task1 = new TaskEntity("汉姆", new DateTime(2019, 7, 1), 1, "天天跑步");
+            TaskEntity task2 = new TaskEntity("上学", new DateTime(2017, 6, 1), 2, "天天上学");
+            TaskManager.AddTask(task1);
+            TaskManager.AddTask(task2);
+            TaskManager.SortTasks();
             WorkManager.AddWork(today, work1);
             WorkManager.AddWork(today, work2);
             WorkManager.AddWork(today, work3);
+            
         }
         // <T> is the type of data in the list.
         // If you have a List<int>, for example, then call this as follows:

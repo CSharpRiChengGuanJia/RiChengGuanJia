@@ -17,8 +17,7 @@ namespace Daily
         WorkEntity workToModify = null;
         public Form3()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
         public Form3(Form1 f1) : this()
         {

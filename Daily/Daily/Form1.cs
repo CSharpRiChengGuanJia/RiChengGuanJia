@@ -14,20 +14,26 @@ namespace Daily
     {
         //public GlobalVariable Global = new GlobalVariable();
         public DailyEntity thisDay = null; //当前界面对应的那天
-
+        public List<TaskEntity> Recenttasks = new List<TaskEntity>();//近期任务
         public Form1()
         {
             InitializeComponent();
-            GlobalVariable.TestInit(); //先随便初始化几个事务，用来测试
+            GlobalVariable.TestInit();//先随便初始化几个事务，用来测试
+            WorkManager.SortWork();//对全部事务进行排序
             bindingSource1.DataSource = GlobalVariable.AllWorks; //暂时把首页数据绑定为全部事务
+            bindingSource4.DataSource = GlobalVariable.AllTasks;//把首页近期任务绑定为全部任务
         }
         public Form1(DailyEntity dailyEntity) : this()
         {
             thisDay = dailyEntity;//当前界面对应的那天
+            Recenttasks = TaskManager.ChooseTasks(thisDay);//当前界面对应的近期任务
+            DailyManager.SortWorks(thisDay);//对一日事物进行排序
             bindingSource1.DataSource = thisDay.Works; //列表的数据绑定为这一天的事务集合
+            bindingSource2.DataSource = Recenttasks;//列表的数据绑定为最近的任务集合
             //bindingSource1.DataSource = new BindingList<WorkEntity>(thisDay.Works); //如果要排序，要转换成这种类
             //dataGridView1.Sort(dataGridView1.Columns[1], 0); //排序（会报错）
             bindingSource3.DataSource = GlobalVariable.AllWorks;  //这个是事务一览那个界面的列表
+            
             //以下3个textbox是在“查看日历”里面的那3个框框
             textBox1.Text = thisDay.Year.ToString();
             textBox2.Text = thisDay.Month.ToString();
@@ -47,8 +53,11 @@ namespace Daily
             //把数据源重新赋值一下就可以刷新了
             bindingSource1.DataSource = new List<WorkEntity>();
             bindingSource1.DataSource = thisDay.Works;
+            bindingSource2.DataSource = Recenttasks;
             bindingSource3.DataSource = new List<WorkEntity>();
             bindingSource3.DataSource = GlobalVariable.AllWorks;
+            bindingSource4.DataSource = new List<TaskEntity>();
+            bindingSource4.DataSource = GlobalVariable.AllTasks;
         }
 
         //获取选中行（事务）的id，用于检索事务
@@ -56,7 +65,11 @@ namespace Daily
         {
             return dataGridView1.CurrentRow.Cells[6].Value.ToString();
         }
-
+        //获取选中行（任务）的ID，用于检索任务
+        public string GetTID()
+        {
+            return dataGridView4.CurrentRow.Cells[1].Value.ToString();
+        }
         //添加事务
         private void button1_Click(object sender, EventArgs e)
         {
@@ -79,7 +92,21 @@ namespace Daily
             WorkManager.DelWork(workToDel);
             Renew();
         }
-
+        //删除任务
+        private void button9_Click(object sender, EventArgs e)
+        {
+            TaskEntity ta = null;
+            foreach (TaskEntity n in GlobalVariable.AllTasks)
+            {
+                if (n.ID ==GetTID())
+                {
+                    ta = n;
+                    break;
+                }
+            }
+            TaskManager.DelTask(ta);
+            Renew();
+        }
         //编辑事务
         private void button2_Click(object sender, EventArgs e)
         {
@@ -116,8 +143,11 @@ namespace Daily
         {
             DateTime date = new DateTime(thisDay.Year, thisDay.Month, thisDay.Day).AddDays(-1);
             thisDay = DailyManager.GetDaily(date.Year, date.Month, date.Day);
+            Recenttasks = TaskManager.ChooseTasks(thisDay);
             bindingSource1.DataSource = thisDay.Works;
+            
             tabControl1.SelectTab(0);
+            Renew();
             TextInit();
         }
 
@@ -126,8 +156,10 @@ namespace Daily
         {
             DateTime date = new DateTime(thisDay.Year, thisDay.Month, thisDay.Day).AddDays(1);
             thisDay = DailyManager.GetDaily(date.Year, date.Month, date.Day);
+            Recenttasks = TaskManager.ChooseTasks(thisDay);
             bindingSource1.DataSource = thisDay.Works;
             tabControl1.SelectTab(0);
+            Renew();
             TextInit();
         }
 
@@ -136,6 +168,18 @@ namespace Daily
         {
             Form4 f4 = new Form4(this);
             f4.ShowDialog();
+        }
+        //添加任务
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form f8 = new Form8(this);
+            f8.ShowDialog();
+        }
+        //编辑任务
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form9 f9 = new Form9(this);
+            f9.ShowDialog();
         }
     }
 }
