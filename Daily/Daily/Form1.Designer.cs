@@ -38,6 +38,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taskNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isEndDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -70,6 +76,11 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isEndDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -85,12 +96,6 @@
             this.workEntityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dailyEntityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.workEntityBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taskNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.levelDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isEndDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -236,6 +241,42 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(1261, 165);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // taskNameDataGridViewTextBoxColumn
+            // 
+            this.taskNameDataGridViewTextBoxColumn.DataPropertyName = "TaskName";
+            this.taskNameDataGridViewTextBoxColumn.HeaderText = "TaskName";
+            this.taskNameDataGridViewTextBoxColumn.Name = "taskNameDataGridViewTextBoxColumn";
+            // 
+            // endTimeDataGridViewTextBoxColumn1
+            // 
+            this.endTimeDataGridViewTextBoxColumn1.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn1.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn1.Name = "endTimeDataGridViewTextBoxColumn1";
+            // 
+            // levelDataGridViewTextBoxColumn1
+            // 
+            this.levelDataGridViewTextBoxColumn1.DataPropertyName = "Level";
+            this.levelDataGridViewTextBoxColumn1.HeaderText = "Level";
+            this.levelDataGridViewTextBoxColumn1.Name = "levelDataGridViewTextBoxColumn1";
+            // 
+            // contentDataGridViewTextBoxColumn1
+            // 
+            this.contentDataGridViewTextBoxColumn1.DataPropertyName = "Content";
+            this.contentDataGridViewTextBoxColumn1.HeaderText = "Content";
+            this.contentDataGridViewTextBoxColumn1.Name = "contentDataGridViewTextBoxColumn1";
+            // 
+            // isEndDataGridViewCheckBoxColumn1
+            // 
+            this.isEndDataGridViewCheckBoxColumn1.DataPropertyName = "IsEnd";
+            this.isEndDataGridViewCheckBoxColumn1.HeaderText = "IsEnd";
+            this.isEndDataGridViewCheckBoxColumn1.Name = "isEndDataGridViewCheckBoxColumn1";
             // 
             // bindingSource2
             // 
@@ -500,6 +541,7 @@
             this.button9.TabIndex = 10;
             this.button9.Text = "删除任务";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -510,6 +552,7 @@
             this.button10.TabIndex = 9;
             this.button10.Text = "编辑任务";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -537,10 +580,16 @@
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AllowUserToOrderColumns = true;
             this.dataGridView4.AutoGenerateColumns = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TaskName});
+            this.TaskName,
+            this.iDDataGridViewTextBoxColumn2,
+            this.endTimeDataGridViewTextBoxColumn2,
+            this.levelDataGridViewTextBoxColumn2,
+            this.contentDataGridViewTextBoxColumn2,
+            this.isEndDataGridViewCheckBoxColumn2});
             this.dataGridView4.DataSource = this.bindingSource4;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(4, 22);
@@ -555,6 +604,40 @@
             this.TaskName.DataPropertyName = "TaskName";
             this.TaskName.HeaderText = "TaskName";
             this.TaskName.Name = "TaskName";
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            // 
+            // endTimeDataGridViewTextBoxColumn2
+            // 
+            this.endTimeDataGridViewTextBoxColumn2.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn2.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn2.Name = "endTimeDataGridViewTextBoxColumn2";
+            // 
+            // levelDataGridViewTextBoxColumn2
+            // 
+            this.levelDataGridViewTextBoxColumn2.DataPropertyName = "Level";
+            this.levelDataGridViewTextBoxColumn2.HeaderText = "Level";
+            this.levelDataGridViewTextBoxColumn2.Name = "levelDataGridViewTextBoxColumn2";
+            // 
+            // contentDataGridViewTextBoxColumn2
+            // 
+            this.contentDataGridViewTextBoxColumn2.DataPropertyName = "Content";
+            this.contentDataGridViewTextBoxColumn2.HeaderText = "Content";
+            this.contentDataGridViewTextBoxColumn2.Name = "contentDataGridViewTextBoxColumn2";
+            // 
+            // isEndDataGridViewCheckBoxColumn2
+            // 
+            this.isEndDataGridViewCheckBoxColumn2.DataPropertyName = "IsEnd";
+            this.isEndDataGridViewCheckBoxColumn2.HeaderText = "IsEnd";
+            this.isEndDataGridViewCheckBoxColumn2.Name = "isEndDataGridViewCheckBoxColumn2";
+            // 
+            // bindingSource4
+            // 
+            this.bindingSource4.DataSource = typeof(Daily.TaskEntity);
             // 
             // groupBox3
             // 
@@ -662,42 +745,6 @@
             // 
             this.workEntityBindingSource1.DataSource = typeof(Daily.WorkEntity);
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // taskNameDataGridViewTextBoxColumn
-            // 
-            this.taskNameDataGridViewTextBoxColumn.DataPropertyName = "TaskName";
-            this.taskNameDataGridViewTextBoxColumn.HeaderText = "TaskName";
-            this.taskNameDataGridViewTextBoxColumn.Name = "taskNameDataGridViewTextBoxColumn";
-            // 
-            // endTimeDataGridViewTextBoxColumn1
-            // 
-            this.endTimeDataGridViewTextBoxColumn1.DataPropertyName = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn1.HeaderText = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn1.Name = "endTimeDataGridViewTextBoxColumn1";
-            // 
-            // levelDataGridViewTextBoxColumn1
-            // 
-            this.levelDataGridViewTextBoxColumn1.DataPropertyName = "Level";
-            this.levelDataGridViewTextBoxColumn1.HeaderText = "Level";
-            this.levelDataGridViewTextBoxColumn1.Name = "levelDataGridViewTextBoxColumn1";
-            // 
-            // contentDataGridViewTextBoxColumn1
-            // 
-            this.contentDataGridViewTextBoxColumn1.DataPropertyName = "Content";
-            this.contentDataGridViewTextBoxColumn1.HeaderText = "Content";
-            this.contentDataGridViewTextBoxColumn1.Name = "contentDataGridViewTextBoxColumn1";
-            // 
-            // isEndDataGridViewCheckBoxColumn1
-            // 
-            this.isEndDataGridViewCheckBoxColumn1.DataPropertyName = "IsEnd";
-            this.isEndDataGridViewCheckBoxColumn1.HeaderText = "IsEnd";
-            this.isEndDataGridViewCheckBoxColumn1.Name = "isEndDataGridViewCheckBoxColumn1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -803,6 +850,11 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.BindingSource bindingSource4;
         private System.Windows.Forms.DataGridViewTextBoxColumn taskNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn levelDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isEndDataGridViewCheckBoxColumn2;
     }
 }
 

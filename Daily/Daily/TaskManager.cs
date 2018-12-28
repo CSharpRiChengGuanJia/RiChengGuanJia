@@ -71,11 +71,11 @@ namespace Daily
         ///<summary>
         ///筛选近期任务并排序
         /// </summary>
-        public  static List<TaskEntity> ChooseTasks()
+        public  static List<TaskEntity> ChooseTasks(DailyEntity thisday)
         {
             List<TaskEntity> choosentasks = new List<TaskEntity>();
-            DateTime now = DateTime.Now;
-            var m = from n in GlobalVariable.AllTasks where (n.EndTime - now).Days <= 3 orderby n.EndTime select n;
+            DateTime now = new DateTime(thisday.Year,thisday.Month,thisday.Day);
+            var m = from n in GlobalVariable.AllTasks where Math.Abs((n.EndTime - now).Days) <= 3 orderby n.EndTime select n;
             foreach(var n in m)
             {
                 choosentasks.Add(n);

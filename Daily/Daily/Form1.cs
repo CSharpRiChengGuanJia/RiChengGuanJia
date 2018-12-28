@@ -26,7 +26,7 @@ namespace Daily
         public Form1(DailyEntity dailyEntity) : this()
         {
             thisDay = dailyEntity;//当前界面对应的那天
-            Recenttasks = TaskManager.ChooseTasks();//当前界面对应的近期任务
+            Recenttasks = TaskManager.ChooseTasks(thisDay);//当前界面对应的近期任务
             DailyManager.SortWorks(thisDay);//对一日事物进行排序
             bindingSource1.DataSource = thisDay.Works; //列表的数据绑定为这一天的事务集合
             bindingSource2.DataSource = Recenttasks;//列表的数据绑定为最近的任务集合
@@ -56,6 +56,7 @@ namespace Daily
             bindingSource2.DataSource = Recenttasks;
             bindingSource3.DataSource = new List<WorkEntity>();
             bindingSource3.DataSource = GlobalVariable.AllWorks;
+            bindingSource4.DataSource = new List<TaskEntity>();
             bindingSource4.DataSource = GlobalVariable.AllTasks;
         }
 
@@ -64,7 +65,11 @@ namespace Daily
         {
             return dataGridView1.CurrentRow.Cells[6].Value.ToString();
         }
-
+        //获取选中行（任务）的ID，用于检索任务
+        public string GetTID()
+        {
+            return dataGridView4.CurrentRow.Cells[1].Value.ToString();
+        }
         //添加事务
         private void button1_Click(object sender, EventArgs e)
         {
@@ -87,7 +92,21 @@ namespace Daily
             WorkManager.DelWork(workToDel);
             Renew();
         }
-
+        //删除任务
+        private void button9_Click(object sender, EventArgs e)
+        {
+            TaskEntity ta = null;
+            foreach (TaskEntity n in GlobalVariable.AllTasks)
+            {
+                if (n.ID ==GetTID())
+                {
+                    ta = n;
+                    break;
+                }
+            }
+            TaskManager.DelTask(ta);
+            Renew();
+        }
         //编辑事务
         private void button2_Click(object sender, EventArgs e)
         {
@@ -124,8 +143,11 @@ namespace Daily
         {
             DateTime date = new DateTime(thisDay.Year, thisDay.Month, thisDay.Day).AddDays(-1);
             thisDay = DailyManager.GetDaily(date.Year, date.Month, date.Day);
+            Recenttasks = TaskManager.ChooseTasks(thisDay);
             bindingSource1.DataSource = thisDay.Works;
+            
             tabControl1.SelectTab(0);
+            Renew();
             TextInit();
         }
 
@@ -134,8 +156,10 @@ namespace Daily
         {
             DateTime date = new DateTime(thisDay.Year, thisDay.Month, thisDay.Day).AddDays(1);
             thisDay = DailyManager.GetDaily(date.Year, date.Month, date.Day);
+            Recenttasks = TaskManager.ChooseTasks(thisDay);
             bindingSource1.DataSource = thisDay.Works;
             tabControl1.SelectTab(0);
+            Renew();
             TextInit();
         }
 
@@ -145,11 +169,17 @@ namespace Daily
             Form4 f4 = new Form4(this);
             f4.ShowDialog();
         }
-
+        //添加任务
         private void button11_Click(object sender, EventArgs e)
         {
-            Form f5 = new Form5(this);
-            f5.ShowDialog();
+            Form f8 = new Form8(this);
+            f8.ShowDialog();
+        }
+        //编辑任务
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form9 f9 = new Form9(this);
+            f9.ShowDialog();
         }
     }
 }
