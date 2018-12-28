@@ -75,12 +75,12 @@ namespace Daily.Custom_Control
 
         private void timerUp_Tick(object sender, EventArgs e)
         {
-            if(this.Height >= 0)
+            if(this.Height > 0)
             {
             
                 
                 this.Height = this.Height - 26;
-                //this.Refresh();
+                
                 
             }
             else
@@ -93,12 +93,20 @@ namespace Daily.Custom_Control
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-
+            TaskEditPage taskEditPage = new TaskEditPage();
+            taskEditPage.labelDate.Text = DateTime.Now.ToString("dd MMMM yyyy, dddd", new CultureInfo("en-us"));
+            this.Parent.Controls.Add(taskEditPage);
+            taskEditPage.Location = new Point(0, 35);
+            timerUp.Start();
+            
         }
 
         private void ButtonTask_Click(object sender, EventArgs e)
         {
-
+            TaskViewPage taskViewPage = new TaskViewPage();
+            this.Parent.Controls.Add(taskViewPage);
+            taskViewPage.Location = new Point(0, 35);
+            timerUp.Start();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -109,6 +117,7 @@ namespace Daily.Custom_Control
             dialog.StartPosition = FormStartPosition.CenterParent;
             dialog.ShowDialog();
             
+
         }
 
        

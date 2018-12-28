@@ -16,5 +16,26 @@ namespace Daily.Custom_Control
         {
             InitializeComponent();
         }
+
+        private void buttonDay_Click(object sender, EventArgs e)
+        {
+            buttonDay.FlatAppearance.BorderSize = 1;
+            buttonWeek.FlatAppearance.BorderSize = 0;
+            buttonAll.FlatAppearance.BorderSize = 0;
+        }
+
+        private void buttonAll_Click(object sender, EventArgs e)
+        {
+            buttonDay.FlatAppearance.BorderSize = 0;
+            buttonAll.FlatAppearance.BorderSize = 1;
+            buttonWeek.FlatAppearance.BorderSize = 0;
+        }
+
+        private void buttonWeek_Click(object sender, EventArgs e)
+        {
+            buttonDay.FlatAppearance.BorderSize = 0;
+            buttonAll.FlatAppearance.BorderSize = 0;
+            buttonWeek.FlatAppearance.BorderSize = 1;
+        }
     }
 }

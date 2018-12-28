@@ -45,6 +45,7 @@
             this.week4 = new Daily.Custom_Control.Week();
             this.buttonToday = new System.Windows.Forms.Button();
             this.buttonJump = new System.Windows.Forms.Button();
+            this.panelFollow = new System.Windows.Forms.Panel();
             this.panelTop.SuspendLayout();
             this.panelWeek.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,7 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panelTop.Controls.Add(this.panelFollow);
             this.panelTop.Controls.Add(this.textBoxYear);
             this.panelTop.Controls.Add(this.ButtonNextYear);
             this.panelTop.Controls.Add(this.ButtonPreviousYear);
@@ -101,7 +103,7 @@
             this.labelYear.AutoSize = true;
             this.labelYear.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelYear.Location = new System.Drawing.Point(420, 12);
+            this.labelYear.Location = new System.Drawing.Point(420, 9);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(65, 30);
             this.labelYear.TabIndex = 0;
@@ -241,6 +243,15 @@
             this.buttonJump.UseVisualStyleBackColor = true;
             this.buttonJump.Click += new System.EventHandler(this.buttonJump_Click);
             // 
+            // panelFollow
+            // 
+            this.panelFollow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelFollow.Location = new System.Drawing.Point(150, 40);
+            this.panelFollow.Name = "panelFollow";
+            this.panelFollow.Size = new System.Drawing.Size(5, 5);
+            this.panelFollow.TabIndex = 4;
+            this.panelFollow.Visible = false;
+            // 
             // CalendarPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -279,5 +290,6 @@
         private System.Windows.Forms.TextBox textBoxYear;
         private System.Windows.Forms.Button buttonToday;
         private System.Windows.Forms.Button buttonJump;
+        public System.Windows.Forms.Panel panelFollow;
     }
 }

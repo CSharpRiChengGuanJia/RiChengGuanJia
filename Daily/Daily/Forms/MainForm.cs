@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Daily.Custom_Control;
 
 namespace Daily.Forms
 {
@@ -18,7 +19,8 @@ namespace Daily.Forms
         public MainForm()
         {
             InitializeComponent();
-            
+
+            panelFollow.Left = buttonCalendar.Left;
             //panelWidth = panelLeft.Width;
             //Hidden = true;
             flag = false;
@@ -43,6 +45,7 @@ namespace Daily.Forms
             notifyIconTray.BalloonTipTitle = "Time Master";
             notifyIconTray.BalloonTipText = "Hello!";
             notifyIconTray.Visible = true;
+            
         }
 
         private void circularButtonExit_Click(object sender, EventArgs e)
@@ -50,13 +53,14 @@ namespace Daily.Forms
             Dialog dialog = new Dialog();
             dialog.StartPosition = FormStartPosition.CenterParent;
             
-            dialog.hide += new Dialog.EventForm(() =>
+            dialog.Hide1 += new Dialog.EventForm(() =>
             {
                 this.Hide();
                 flag = true;
             });
             dialog.notifyDispose += new Dialog.EventForm(() => notifyIconTray.Dispose());
             dialog.ShowDialog();
+            
         }
 
 
@@ -81,110 +85,9 @@ namespace Daily.Forms
 
         }
 
-        private void buttonMenu_Click(object sender, EventArgs e)
-        {
-            timerPanelLeft.Start();
-        }
+        
 
-        //private void timerPanelLeft_Tick(object sender, EventArgs e)
-        //{
-        //    if (Hidden)
-        //    {
-        //        panelLeft.Width = panelLeft.Width + 7;
-        //        if (panelLeft.Width >= 230)
-        //        {
-        //            timerPanelLeft.Stop();
-        //            Hidden = false;
-        //            this.Refresh();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        panelLeft.Width = panelLeft.Width - 7;
-        //        if(panelLeft.Width <= panelWidth)
-        //        {
-        //            timerPanelLeft.Stop();
-        //            Hidden = true;
-        //            this.Refresh();
-        //        }
-        //    }
-        //}
-
-        //private void buttonHome_Click(object sender, EventArgs e)
-        //{
-        //    panelFollow.Top = buttonHome.Top;
-        //    buttonHome.BackColor = Color.FromArgb(115, 115, 255);
-        //    buttonHome.ForeColor = Color.WhiteSmoke;
-        //    buttonCal.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonCal.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonHelp.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonHelp.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonSetting.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonSetting.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonTask.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonTask.ForeColor = Color.FromArgb(50, 180, 192);
-        //}
-
-        //private void buttonCal_Click(object sender, EventArgs e)
-        //{
-        //    panelFollow.Top = buttonCal.Top;
-        //    buttonCal.BackColor = Color.FromArgb(115, 115, 255);
-        //    buttonCal.ForeColor = Color.WhiteSmoke;
-        //    buttonHome.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonHome.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonHelp.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonHelp.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonSetting.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonSetting.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonTask.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonTask.ForeColor = Color.FromArgb(50, 180, 192);
-        //}
-
-        //private void buttonTask_Click(object sender, EventArgs e)
-        //{
-        //    panelFollow.Top = buttonTask.Top;
-        //    buttonTask.BackColor = Color.FromArgb(115, 115, 255);
-        //    buttonTask.ForeColor = Color.WhiteSmoke;
-        //    buttonHome.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonHome.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonCal.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonCal.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonHelp.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonHelp.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonSetting.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonSetting.ForeColor = Color.FromArgb(50, 180, 192);
-        //}
-
-        //private void buttonHelp_Click(object sender, EventArgs e)
-        //{
-        //    panelFollow.Top = buttonHelp.Top;
-        //    buttonHelp.BackColor = Color.FromArgb(115, 115, 255);
-        //    buttonHelp.ForeColor = Color.WhiteSmoke;
-        //    buttonHome.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonHome.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonCal.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonCal.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonSetting.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonSetting.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonTask.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonTask.ForeColor = Color.FromArgb(50, 180, 192);
-        //}
-
-        //private void buttonSetting_Click(object sender, EventArgs e)
-        //{
-        //    panelFollow.Top = buttonSetting.Top;
-        //    buttonSetting.BackColor = Color.FromArgb(115, 115, 255);
-        //    buttonSetting.ForeColor = Color.WhiteSmoke;
-        //    buttonHome.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonHome.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonCal.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonCal.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonHelp.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonHelp.ForeColor = Color.FromArgb(50, 180, 192);
-        //    buttonTask.BackColor = Color.FromArgb(41, 45, 52);
-        //    buttonTask.ForeColor = Color.FromArgb(50, 180, 192);
-        //}
-
+       
    
         private void notifyIconTray_MouseClick(object sender, MouseEventArgs e)
         {
@@ -203,6 +106,59 @@ namespace Daily.Forms
         private void sHOWToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Show();
+        }
+
+        private void buttonSetting_Click(object sender, EventArgs e)
+        {
+            //panelFollow.Left = buttonSetting.Left;
+            Setting setting = new Setting();
+            setting.StartPosition = FormStartPosition.CenterParent;
+            setting.ShowDialog();
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            //panelFollow.Left = buttonHelp.Left;
+            Help help = new Help();
+            help.ShowDialog();
+        }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            panelFollow.Left = buttonHome.Left;
+            //homePage.Show();
+           
+            //timerDown.Start();
+        }
+
+        private void timerDown_Tick(object sender, EventArgs e)
+        {
+            //if (homePage.Height < 520)
+            //{
+            //    homePage.Height = homePage.Height + 26;
+            //}
+            //else
+            //{
+            //    timerDown.Stop();
+            //}
+        }
+
+        private void buttonCalendar_Click(object sender, EventArgs e)
+        {
+            panelFollow.Left = buttonCalendar.Left;
+            CalendarPage calendarPage = new CalendarPage();
+            calendarPage.Location = new Point(0, 35);
+            this.Controls.Add(calendarPage);
+            calendarPage.BringToFront();
+        }
+
+        private void buttonTaskView_Click(object sender, EventArgs e)
+        {
+            panelFollow.Left = buttonTaskView.Left;
+            TaskViewPage taskViewPage = new TaskViewPage();
+            taskViewPage.Location = new Point(0, 35);
+            this.Controls.Add(taskViewPage);
+            taskViewPage.BringToFront();
         }
     }
 }

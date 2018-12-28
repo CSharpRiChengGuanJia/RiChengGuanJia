@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Daily.Forms;
 
 namespace Daily.Custom_Control
 {
@@ -202,10 +203,7 @@ namespace Daily.Custom_Control
             }
         }
 
-        private void Anniversary_Click_1(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void Save_Click(object sender, EventArgs e)
         {
@@ -214,7 +212,30 @@ namespace Daily.Custom_Control
 
         private void Delete_Click(object sender, EventArgs e)
         {
+            DeleteDialog delete = new DeleteDialog();
+            delete.StartPosition = FormStartPosition.CenterParent;
+            delete.ShowDialog();
+        }
 
+        private void buttonUrgent_Click(object sender, EventArgs e)
+        {
+            buttonUrgent.BackColor = Color.Red;
+            buttonNonUrgent.BackColor = Color.FromArgb(50, 50, 50);
+            buttonRegular.BackColor = Color.FromArgb(50, 50, 50);
+        }
+
+        private void buttonNonUrgent_Click(object sender, EventArgs e)
+        {
+            buttonUrgent.BackColor = Color.FromArgb(50, 50, 50);
+            buttonNonUrgent.BackColor = Color.Green;
+            buttonRegular.BackColor = Color.FromArgb(50, 50, 50);
+        }
+
+        private void buttonRegular_Click(object sender, EventArgs e)
+        {
+            buttonUrgent.BackColor = Color.FromArgb(50, 50, 50);
+            buttonNonUrgent.BackColor = Color.FromArgb(50, 50, 50);
+            buttonRegular.BackColor = Color.Gray;
         }
     }
 }

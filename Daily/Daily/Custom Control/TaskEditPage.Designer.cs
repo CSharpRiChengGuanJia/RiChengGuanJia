@@ -48,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelEnd = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.labelStart = new System.Windows.Forms.Label();
             this.buttonChoose = new System.Windows.Forms.Button();
             this.textBoxEnd = new System.Windows.Forms.TextBox();
@@ -56,7 +57,9 @@
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.Save = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.buttonUrgent = new System.Windows.Forms.Button();
+            this.buttonNonUrgent = new System.Windows.Forms.Button();
+            this.buttonRegular = new System.Windows.Forms.Button();
             this.panelEdit.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,6 +95,9 @@
             // panelEdit
             // 
             this.panelEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panelEdit.Controls.Add(this.buttonRegular);
+            this.panelEdit.Controls.Add(this.buttonNonUrgent);
+            this.panelEdit.Controls.Add(this.buttonUrgent);
             this.panelEdit.Controls.Add(this.panel1);
             this.panelEdit.Controls.Add(this.pictureBox1);
             this.panelEdit.Controls.Add(this.label6);
@@ -301,6 +307,16 @@
             this.labelEnd.TabIndex = 2;
             this.labelEnd.Text = "EndTime:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(579, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 18);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Status:";
+            // 
             // labelStart
             // 
             this.labelStart.AutoSize = true;
@@ -317,7 +333,7 @@
             this.buttonChoose.FlatAppearance.BorderSize = 0;
             this.buttonChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonChoose.Image = ((System.Drawing.Image)(resources.GetObject("buttonChoose.Image")));
-            this.buttonChoose.Location = new System.Drawing.Point(34, 0);
+            this.buttonChoose.Location = new System.Drawing.Point(34, 1);
             this.buttonChoose.Name = "buttonChoose";
             this.buttonChoose.Size = new System.Drawing.Size(52, 58);
             this.buttonChoose.TabIndex = 1;
@@ -403,15 +419,41 @@
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // label7
+            // buttonUrgent
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(579, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 18);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Status:";
+            this.buttonUrgent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUrgent.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUrgent.Location = new System.Drawing.Point(673, 67);
+            this.buttonUrgent.Name = "buttonUrgent";
+            this.buttonUrgent.Size = new System.Drawing.Size(108, 23);
+            this.buttonUrgent.TabIndex = 7;
+            this.buttonUrgent.Text = "URGENT";
+            this.buttonUrgent.UseVisualStyleBackColor = true;
+            this.buttonUrgent.Click += new System.EventHandler(this.buttonUrgent_Click);
+            // 
+            // buttonNonUrgent
+            // 
+            this.buttonNonUrgent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNonUrgent.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNonUrgent.Location = new System.Drawing.Point(673, 97);
+            this.buttonNonUrgent.Name = "buttonNonUrgent";
+            this.buttonNonUrgent.Size = new System.Drawing.Size(108, 23);
+            this.buttonNonUrgent.TabIndex = 8;
+            this.buttonNonUrgent.Text = "NON-URGENT";
+            this.buttonNonUrgent.UseVisualStyleBackColor = true;
+            this.buttonNonUrgent.Click += new System.EventHandler(this.buttonNonUrgent_Click);
+            // 
+            // buttonRegular
+            // 
+            this.buttonRegular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegular.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegular.Location = new System.Drawing.Point(673, 127);
+            this.buttonRegular.Name = "buttonRegular";
+            this.buttonRegular.Size = new System.Drawing.Size(108, 23);
+            this.buttonRegular.TabIndex = 8;
+            this.buttonRegular.Text = "REGULAR";
+            this.buttonRegular.UseVisualStyleBackColor = true;
+            this.buttonRegular.Click += new System.EventHandler(this.buttonRegular_Click);
             // 
             // TaskEditPage
             // 
@@ -445,7 +487,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Panel panelEdit;
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.Button buttonChoose;
@@ -472,5 +513,9 @@
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.Button buttonRegular;
+        private System.Windows.Forms.Button buttonNonUrgent;
+        private System.Windows.Forms.Button buttonUrgent;
     }
 }

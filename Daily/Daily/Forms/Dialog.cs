@@ -19,7 +19,7 @@ namespace Daily.Forms
         }
         private const int CS_DropShadow = 0x00020000;
         public delegate void EventForm();
-        public event EventForm hide;
+        public event EventForm Hide1;
         public event EventForm notifyDispose;
         protected override CreateParams CreateParams
         {
@@ -56,10 +56,13 @@ namespace Daily.Forms
         }
 
         private void buttonTray_Click(object sender, EventArgs e)
-        { 
-            hide();
-            this.Dispose();
-            this.Close();
+        {
+            
+                Hide1();
+                this.Dispose();
+                this.Close();
+          
+           
         }
     }
 }

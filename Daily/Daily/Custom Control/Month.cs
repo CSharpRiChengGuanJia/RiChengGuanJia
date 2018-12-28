@@ -81,11 +81,12 @@ namespace Daily.Custom_Control
         {
             CalendarPage calendar = (CalendarPage)this.Parent.Parent;
             CalendarPage.chosenMonth = Convert.ToInt32(this.Text);
-            //this.BackColor = Color.FromArgb(120, Color.Orange);
-            //calendar.DisplayMonth();
+            Control[] controls = this.Parent.Controls.Find("panelFollow", true);
+            controls[0].Visible = true;
+            controls[0].Location = new Point(this.Location.X + 16, this.Location.Y);
             calendar.DisplayDay(date);
             
-            //Change(date);
+            
         }
     }
 }

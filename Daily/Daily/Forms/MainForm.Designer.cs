@@ -34,12 +34,18 @@
             this.labelWelcome = new System.Windows.Forms.Label();
             this.labelTop = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timerPanelLeft = new System.Windows.Forms.Timer(this.components);
             this.panelPage = new System.Windows.Forms.Panel();
+            this.buttonSetting = new System.Windows.Forms.Button();
+            this.buttonTaskView = new System.Windows.Forms.Button();
+            this.buttonHome = new System.Windows.Forms.Button();
+            this.buttonCalendar = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sHOWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerDown = new System.Windows.Forms.Timer(this.components);
+            this.panelFollow = new System.Windows.Forms.Panel();
             this.circularPictureBox1 = new Daily.CircularPictureBox();
             this.circularButtonDown = new Daily.CircularButton();
             this.circularButtonTheme = new Daily.CircularButton();
@@ -50,9 +56,9 @@
             this.dragControl2 = new Daily.DragControl();
             this.dragControl3 = new Daily.DragControl();
             this.dragControl4 = new Daily.DragControl();
-            this.calendarPage1 = new Daily.Custom_Control.CalendarPage();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelPage.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -102,17 +108,79 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // timerPanelLeft
-            // 
-            this.timerPanelLeft.Interval = 1;
-            // 
             // panelPage
             // 
+            this.panelPage.Controls.Add(this.panelFollow);
+            this.panelPage.Controls.Add(this.buttonSetting);
+            this.panelPage.Controls.Add(this.buttonTaskView);
+            this.panelPage.Controls.Add(this.buttonHome);
+            this.panelPage.Controls.Add(this.buttonCalendar);
+            this.panelPage.Controls.Add(this.buttonHelp);
             this.panelPage.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelPage.Location = new System.Drawing.Point(0, 485);
             this.panelPage.Name = "panelPage";
             this.panelPage.Size = new System.Drawing.Size(900, 35);
             this.panelPage.TabIndex = 3;
+            // 
+            // buttonSetting
+            // 
+            this.buttonSetting.FlatAppearance.BorderSize = 0;
+            this.buttonSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSetting.Image = ((System.Drawing.Image)(resources.GetObject("buttonSetting.Image")));
+            this.buttonSetting.Location = new System.Drawing.Point(816, 3);
+            this.buttonSetting.Name = "buttonSetting";
+            this.buttonSetting.Size = new System.Drawing.Size(45, 32);
+            this.buttonSetting.TabIndex = 0;
+            this.buttonSetting.UseVisualStyleBackColor = true;
+            this.buttonSetting.Click += new System.EventHandler(this.buttonSetting_Click);
+            // 
+            // buttonTaskView
+            // 
+            this.buttonTaskView.FlatAppearance.BorderSize = 0;
+            this.buttonTaskView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTaskView.Image = ((System.Drawing.Image)(resources.GetObject("buttonTaskView.Image")));
+            this.buttonTaskView.Location = new System.Drawing.Point(535, 3);
+            this.buttonTaskView.Name = "buttonTaskView";
+            this.buttonTaskView.Size = new System.Drawing.Size(45, 32);
+            this.buttonTaskView.TabIndex = 0;
+            this.buttonTaskView.UseVisualStyleBackColor = true;
+            this.buttonTaskView.Click += new System.EventHandler(this.buttonTaskView_Click);
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.FlatAppearance.BorderSize = 0;
+            this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonHome.Image")));
+            this.buttonHome.Location = new System.Drawing.Point(433, 3);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(45, 32);
+            this.buttonHome.TabIndex = 0;
+            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            // 
+            // buttonCalendar
+            // 
+            this.buttonCalendar.FlatAppearance.BorderSize = 0;
+            this.buttonCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCalendar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCalendar.Image")));
+            this.buttonCalendar.Location = new System.Drawing.Point(329, 3);
+            this.buttonCalendar.Name = "buttonCalendar";
+            this.buttonCalendar.Size = new System.Drawing.Size(45, 32);
+            this.buttonCalendar.TabIndex = 0;
+            this.buttonCalendar.UseVisualStyleBackColor = true;
+            this.buttonCalendar.Click += new System.EventHandler(this.buttonCalendar_Click);
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.FlatAppearance.BorderSize = 0;
+            this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHelp.Image = ((System.Drawing.Image)(resources.GetObject("buttonHelp.Image")));
+            this.buttonHelp.Location = new System.Drawing.Point(39, 3);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(45, 32);
+            this.buttonHelp.TabIndex = 0;
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // notifyIconTray
             // 
@@ -152,6 +220,19 @@
             this.eXITToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.eXITToolStripMenuItem.Text = "EXIT";
             this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
+            // 
+            // timerDown
+            // 
+            this.timerDown.Interval = 2;
+            this.timerDown.Tick += new System.EventHandler(this.timerDown_Tick);
+            // 
+            // panelFollow
+            // 
+            this.panelFollow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelFollow.Location = new System.Drawing.Point(332, 0);
+            this.panelFollow.Name = "panelFollow";
+            this.panelFollow.Size = new System.Drawing.Size(45, 5);
+            this.panelFollow.TabIndex = 5;
             // 
             // circularPictureBox1
             // 
@@ -242,21 +323,12 @@
             // 
             this.dragControl4.SelectControl = this.labelWelcome;
             // 
-            // calendarPage1
-            // 
-            this.calendarPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.calendarPage1.Location = new System.Drawing.Point(0, 36);
-            this.calendarPage1.Name = "calendarPage1";
-            this.calendarPage1.Size = new System.Drawing.Size(900, 450);
-            this.calendarPage1.TabIndex = 5;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(900, 520);
-            this.Controls.Add(this.calendarPage1);
             this.Controls.Add(this.circularPictureBox1);
             this.Controls.Add(this.panelPage);
             this.Controls.Add(this.panelTop);
@@ -269,6 +341,7 @@
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelPage.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -286,7 +359,6 @@
         private CircularButton circularButtonMinus;
         private CircularButton circularButtonTheme;
         private CircularButton circularButtonDown;
-        private System.Windows.Forms.Timer timerPanelLeft;
         private System.Windows.Forms.Panel panelPage;
         private CircularPictureBox circularPictureBox1;
         private System.Windows.Forms.NotifyIcon notifyIconTray;
@@ -297,6 +369,12 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sHOWToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eXITToolStripMenuItem;
-        private Custom_Control.CalendarPage calendarPage1;
+        private System.Windows.Forms.Button buttonSetting;
+        private System.Windows.Forms.Button buttonTaskView;
+        private System.Windows.Forms.Button buttonHome;
+        private System.Windows.Forms.Button buttonCalendar;
+        private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Timer timerDown;
+        private System.Windows.Forms.Panel panelFollow;
     }    
 }

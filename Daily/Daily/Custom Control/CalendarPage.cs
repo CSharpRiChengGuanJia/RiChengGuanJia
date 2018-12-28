@@ -162,6 +162,7 @@ namespace Daily.Custom_Control
         {
             chosenMonth = month;
             chosenYear = year;
+            labelYear.Text = chosenYear.ToString();
             DisplayDay(dateTime);
         }
 
