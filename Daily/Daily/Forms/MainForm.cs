@@ -19,7 +19,7 @@ namespace Daily.Forms
         public MainForm()
         {
             InitializeComponent();
-
+            
             panelFollow.Left = buttonCalendar.Left;
             //panelWidth = panelLeft.Width;
             //Hidden = true;
@@ -52,13 +52,8 @@ namespace Daily.Forms
         {
             Dialog dialog = new Dialog();
             dialog.StartPosition = FormStartPosition.CenterParent;
-            
-            dialog.Hide1 += new Dialog.EventForm(() =>
-            {
-                this.Hide();
-                flag = true;
-            });
-            dialog.notifyDispose += new Dialog.EventForm(() => notifyIconTray.Dispose());
+
+            dialog.Owner = this;
             dialog.ShowDialog();
             
         }
@@ -110,37 +105,40 @@ namespace Daily.Forms
 
         private void buttonSetting_Click(object sender, EventArgs e)
         {
-            //panelFollow.Left = buttonSetting.Left;
+            
             Setting setting = new Setting();
             setting.StartPosition = FormStartPosition.CenterParent;
+            setting.Owner = this;
             setting.ShowDialog();
+            
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            //panelFollow.Left = buttonHelp.Left;
+            
             Help help = new Help();
+            help.StartPosition = FormStartPosition.CenterParent;
             help.ShowDialog();
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
             panelFollow.Left = buttonHome.Left;
-            //homePage.Show();
-           
-            //timerDown.Start();
+            homePage.Show();
+            homePage.BringToFront();
+            timerDown.Start();
         }
 
         private void timerDown_Tick(object sender, EventArgs e)
         {
-            //if (homePage.Height < 520)
-            //{
-            //    homePage.Height = homePage.Height + 26;
-            //}
-            //else
-            //{
-            //    timerDown.Stop();
-            //}
+            if (homePage.Height < 520)
+            {
+                homePage.Height = homePage.Height + 26;
+            }
+            else
+            {
+                timerDown.Stop();
+            }
         }
 
         private void buttonCalendar_Click(object sender, EventArgs e)
@@ -149,11 +147,13 @@ namespace Daily.Forms
             CalendarPage calendarPage = new CalendarPage();
             calendarPage.Location = new Point(0, 35);
             this.Controls.Add(calendarPage);
+
             calendarPage.BringToFront();
         }
 
         private void buttonTaskView_Click(object sender, EventArgs e)
         {
+
             panelFollow.Left = buttonTaskView.Left;
             TaskViewPage taskViewPage = new TaskViewPage();
             taskViewPage.Location = new Point(0, 35);

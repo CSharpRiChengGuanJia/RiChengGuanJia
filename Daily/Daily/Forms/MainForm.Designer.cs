@@ -35,6 +35,7 @@
             this.labelTop = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelPage = new System.Windows.Forms.Panel();
+            this.panelFollow = new System.Windows.Forms.Panel();
             this.buttonSetting = new System.Windows.Forms.Button();
             this.buttonTaskView = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.sHOWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerDown = new System.Windows.Forms.Timer(this.components);
-            this.panelFollow = new System.Windows.Forms.Panel();
             this.circularPictureBox1 = new Daily.CircularPictureBox();
             this.circularButtonDown = new Daily.CircularButton();
             this.circularButtonTheme = new Daily.CircularButton();
@@ -56,6 +56,7 @@
             this.dragControl2 = new Daily.DragControl();
             this.dragControl3 = new Daily.DragControl();
             this.dragControl4 = new Daily.DragControl();
+            this.homePage = new Daily.Custom_Control.HomePage();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPage.SuspendLayout();
@@ -121,6 +122,14 @@
             this.panelPage.Name = "panelPage";
             this.panelPage.Size = new System.Drawing.Size(900, 35);
             this.panelPage.TabIndex = 3;
+            // 
+            // panelFollow
+            // 
+            this.panelFollow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelFollow.Location = new System.Drawing.Point(332, 0);
+            this.panelFollow.Name = "panelFollow";
+            this.panelFollow.Size = new System.Drawing.Size(45, 5);
+            this.panelFollow.TabIndex = 5;
             // 
             // buttonSetting
             // 
@@ -226,14 +235,6 @@
             this.timerDown.Interval = 2;
             this.timerDown.Tick += new System.EventHandler(this.timerDown_Tick);
             // 
-            // panelFollow
-            // 
-            this.panelFollow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelFollow.Location = new System.Drawing.Point(332, 0);
-            this.panelFollow.Name = "panelFollow";
-            this.panelFollow.Size = new System.Drawing.Size(45, 5);
-            this.panelFollow.TabIndex = 5;
-            // 
             // circularPictureBox1
             // 
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
@@ -323,12 +324,22 @@
             // 
             this.dragControl4.SelectControl = this.labelWelcome;
             // 
+            // homePage
+            // 
+            this.homePage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+            this.homePage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(180)))), ((int)(((byte)(192)))));
+            this.homePage.Location = new System.Drawing.Point(0, 4);
+            this.homePage.Name = "homePage";
+            this.homePage.Size = new System.Drawing.Size(900, 520);
+            this.homePage.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(900, 520);
+            this.Controls.Add(this.homePage);
             this.Controls.Add(this.circularPictureBox1);
             this.Controls.Add(this.panelPage);
             this.Controls.Add(this.panelTop);
@@ -361,7 +372,6 @@
         private CircularButton circularButtonDown;
         private System.Windows.Forms.Panel panelPage;
         private CircularPictureBox circularPictureBox1;
-        private System.Windows.Forms.NotifyIcon notifyIconTray;
         private DragControl dragControl1;
         private DragControl dragControl2;
         private DragControl dragControl3;
@@ -376,5 +386,7 @@
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Timer timerDown;
         private System.Windows.Forms.Panel panelFollow;
+        public System.Windows.Forms.NotifyIcon notifyIconTray;
+        private Custom_Control.HomePage homePage;
     }    
 }

@@ -31,8 +31,8 @@ namespace Daily.Custom_Control
 
         }
         private int xLocation = -205;
-        private int dialogCenterX;
-        private int dialogCenterY;
+        //private int dialogCenterX;
+        //private int dialogCenterY;
         private void HomePage_Load(object sender, EventArgs e)
         {
             timerClock.Start();
@@ -70,6 +70,9 @@ namespace Daily.Custom_Control
 
         private void buttonUp_Click(object sender, EventArgs e)
         {
+            CalendarPage calendarPage = new CalendarPage();
+            this.Parent.Controls.Add(calendarPage);
+            calendarPage.Location = new Point(0, 35);
             timerUp.Start();
         }
 
@@ -111,12 +114,12 @@ namespace Daily.Custom_Control
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            Dialog dialog = new Dialog();
-            this.dialogCenterX = dialog.Width / 2;
-            this.dialogCenterY = dialog.Height / 2;
-            dialog.StartPosition = FormStartPosition.CenterParent;
-            dialog.ShowDialog();
-            
+            //Dialog dialog = new Dialog();
+            //this.dialogCenterX = dialog.Width / 2;
+            //this.dialogCenterY = dialog.Height / 2;
+            //dialog.StartPosition = FormStartPosition.CenterParent;
+            //dialog.ShowDialog();
+            Environment.Exit(0);
 
         }
 

@@ -19,8 +19,7 @@ namespace Daily.Forms
         }
         private const int CS_DropShadow = 0x00020000;
         public delegate void EventForm();
-        public event EventForm Hide1;
-        public event EventForm notifyDispose;
+        
         protected override CreateParams CreateParams
         {
             get
@@ -33,17 +32,12 @@ namespace Daily.Forms
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                notifyDispose();
-                this.Dispose();
-                Environment.Exit(0);
-            }
-            catch(Exception ex)
-            {
-                this.Dispose();
-                Environment.Exit(0);
-            }
+            MainForm form = (MainForm)this.Owner;
+            form.notifyIconTray.Dispose();
+            this.Dispose();
+            Environment.Exit(0);
+           
+            
             
            
         }
@@ -57,10 +51,10 @@ namespace Daily.Forms
 
         private void buttonTray_Click(object sender, EventArgs e)
         {
-            
-                Hide1();
-                this.Dispose();
-                this.Close();
+            MainForm form = (MainForm)this.Owner;
+            form.Hide();
+            this.Dispose();
+            this.Close();
           
            
         }

@@ -22,6 +22,8 @@ namespace Daily.Custom_Control
             buttonDay.FlatAppearance.BorderSize = 1;
             buttonWeek.FlatAppearance.BorderSize = 0;
             buttonAll.FlatAppearance.BorderSize = 0;
+            PanelTasks.Controls.Clear();
+            //这里加display,下同
         }
 
         private void buttonAll_Click(object sender, EventArgs e)
@@ -29,6 +31,7 @@ namespace Daily.Custom_Control
             buttonDay.FlatAppearance.BorderSize = 0;
             buttonAll.FlatAppearance.BorderSize = 1;
             buttonWeek.FlatAppearance.BorderSize = 0;
+            PanelTasks.Controls.Clear();
         }
 
         private void buttonWeek_Click(object sender, EventArgs e)
@@ -36,6 +39,7 @@ namespace Daily.Custom_Control
             buttonDay.FlatAppearance.BorderSize = 0;
             buttonAll.FlatAppearance.BorderSize = 0;
             buttonWeek.FlatAppearance.BorderSize = 1;
+            PanelTasks.Controls.Clear();
         }
     }
 }

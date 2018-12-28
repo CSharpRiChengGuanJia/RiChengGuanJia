@@ -49,3 +49,4 @@ C:\Users\Chris\Desktop\RiChengGuanJia-master\RiChengGuanJia-master\Daily\Daily\o
 C:\Users\Chris\Desktop\RiChengGuanJia-master\RiChengGuanJia-master\Daily\Daily\obj\Debug\Daily.Forms.DeleteDialog.resources
 C:\Users\Chris\Desktop\RiChengGuanJia-master\RiChengGuanJia-master\Daily\Daily\obj\Debug\Daily.Forms.Help.resources
 C:\Users\Chris\Desktop\RiChengGuanJia-master\RiChengGuanJia-master\Daily\Daily\obj\Debug\Daily.Forms.Setting.resources
+C:\Users\Chris\Desktop\RiChengGuanJia-master\RiChengGuanJia-master\Daily\Daily\obj\Debug\Daily.Custom_Control.EachTask.resources

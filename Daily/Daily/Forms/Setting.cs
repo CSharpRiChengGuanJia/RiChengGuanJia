@@ -17,21 +17,35 @@ namespace Daily.Forms
             InitializeComponent();
         }
         bool Checked = true;
+        
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
             this.Close();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void AlarmCheck_Click(object sender, EventArgs e)
         {
-           AlarmCheck.Image = Image.FromFile(@"..\..\Resources\Unchecked.png");
-            Checked = false;
+            if(Checked == true)
+            {
+                AlarmCheck.Image = Image.FromFile(@"..\..\Resources\Unchecked.png");
+                Checked = false;
+            }
+            else
+            {
+                AlarmCheck.Image = Image.FromFile(@"..\..\Resources\Checked.png");
+                Checked = true;
+            }
+                
+
+        }
+
+        private void TrackBarOpacity_Scroll(object sender, EventArgs e)
+        {
+            this.Owner.Opacity = ((double)(TrackBarOpacity.Value) / 100.0);
+           
         }
     }
 }

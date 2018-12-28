@@ -117,38 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonWeek.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAQZJREFUSEvt
-        k71qAlEQhXeJJhFNQMuUeYc8g+Q1fBQLS9PaW6ZOJVrETgSrgKAQf5rFwgewOc6RuXJwrS3cu/Bxd76d
-        uWe57CbFuxbA0xqoB+bAC/0f8BgA8GCkFy6lV8c5cyXpKdHp/oRzyQrIDAT+gd8dUFNnzR1bP9Wxdn92
-        PjcWN2Ow1IHvnLxFMDOKGTy4oGsPnm0dCq0N8KHO65Y6ztnLfIXa7nsenMvgF/eu2IZvbN4CDaEyBcrq
-        vK6o4xz/ilDbH/NKdzXD0nPHcKujzskYHIOdGByDSQw+EYPPMgbfXfDS2As/GVC19SC0rbmpzuu2Op8b
-        hdp6Jh6s+5M+fZGuJDkCNoaeEl0Ut4gAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="buttonAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAaNJREFUSEvt
-        l7tKA0EUQLe3UBBsxEYsrGy0szE/ImgrWqqlRQTFShDFTltBraysRBEUtLCw8pkEEhBF1Pgo9Hom3ER2
-        2EecNQlCBg6zuY85O8NuSLywcSuydiPyCdmMyICGYwf1o/AELzCm4epGQaSFJoEU7EBaU7GDG967Fplh
-        nqTvRMPBg6JBitcp3FC2QLIiPcybcK7xasix3jjrjXBdsHLLFyJdqi0dzyGYHfpQ8bYdj6FYFjOb4/bl
-        ic+rtiQ+DSgQGofhwM7FYGRLsKDXvjzrLqo2WAyP8IH42YpHQv0r85viJK4JPjF3uUJwt078vGI8RJ3I
-        u+tBTqRdtQ08agJNcSwscMZ8b8fjSCTmITm6FGllkV4+5+18FM7islRbvSuRPuJ3dl0YTmKajqFN2yrj
-        N3LXHZuvwIcQ3iGox4fzUSflf4nNg0XjahDkMkE9NtQ67bgIKW2rDBabtupCcRUbfHJ2OmXlI0kiNhRZ
-        YAjpBNdfVi6SpGKD+WVifv4G5UL5C7ETTfG+XVBDZlVbeiX6uZO5WoM0zT+JDtU2YnjeNx8FHRJa1sF4
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="buttonDay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAPJJREFUSEvt
-        lj0KwkAQRlciin+FXiWtnQfwDGlzCg8guUBKS2srO9PaCoKCiiDBwit8ziwE1nHLSZpN4DUvkJdshk1M
-        eMcF6D+AacUZmADouE4bun5k7kBJoOIGHN7A2HU1sOXwj2wizI0ww3tB9gQGHq9JZigyc+Gp5mmXXhPb
-        oLpciqLupSaKAMM0YStBcgJ6Hq9JwuGlC21pc7qpSHpNuNEOl5WNhGm9F4KYzkUer0nMT7wWpDzVHq9J
-        2g6XlY2E+X26kO/y10l6TWyD6kdB/gKGHq9J/rfUtKW1/1zqVOEr8XHYlcBIOG02PMAhHcZ8AV8C94R/
-        RtmpAAAAAElFTkSuQmCC
-</value>
-  </data>
+  <metadata name="ellipseControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

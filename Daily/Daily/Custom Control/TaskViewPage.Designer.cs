@@ -30,11 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskViewPage));
             this.panelTop = new System.Windows.Forms.Panel();
-            this.Year = new System.Windows.Forms.Label();
-            this.buttonDay = new System.Windows.Forms.Button();
             this.buttonWeek = new System.Windows.Forms.Button();
             this.buttonAll = new System.Windows.Forms.Button();
+            this.buttonDay = new System.Windows.Forms.Button();
+            this.Year = new System.Windows.Forms.Label();
+            this.PanelTasks = new System.Windows.Forms.FlowLayoutPanel();
+            this.eachTask1 = new Daily.Custom_Control.EachTask();
             this.panelTop.SuspendLayout();
+            this.PanelTasks.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -51,35 +54,12 @@
             this.panelTop.Size = new System.Drawing.Size(900, 90);
             this.panelTop.TabIndex = 0;
             // 
-            // Year
-            // 
-            this.Year.AutoSize = true;
-            this.Year.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Year.Location = new System.Drawing.Point(402, 18);
-            this.Year.Name = "Year";
-            this.Year.Size = new System.Drawing.Size(69, 29);
-            this.Year.TabIndex = 0;
-            this.Year.Text = "2018";
-            // 
-            // buttonDay
-            // 
-            this.buttonDay.FlatAppearance.BorderSize = 0;
-            this.buttonDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDay.Image = ((System.Drawing.Image)(resources.GetObject("buttonDay.Image")));
-            this.buttonDay.Location = new System.Drawing.Point(407, 50);
-            this.buttonDay.Name = "buttonDay";
-            this.buttonDay.Size = new System.Drawing.Size(55, 37);
-            this.buttonDay.TabIndex = 2;
-            this.buttonDay.UseVisualStyleBackColor = true;
-            this.buttonDay.Click += new System.EventHandler(this.buttonDay_Click);
-            // 
             // buttonWeek
             // 
             this.buttonWeek.FlatAppearance.BorderSize = 0;
             this.buttonWeek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWeek.Image = ((System.Drawing.Image)(resources.GetObject("buttonWeek.Image")));
-            this.buttonWeek.Location = new System.Drawing.Point(480, 50);
+            this.buttonWeek.Location = new System.Drawing.Point(495, 50);
             this.buttonWeek.Name = "buttonWeek";
             this.buttonWeek.Size = new System.Drawing.Size(55, 37);
             this.buttonWeek.TabIndex = 2;
@@ -91,23 +71,67 @@
             this.buttonAll.FlatAppearance.BorderSize = 0;
             this.buttonAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAll.Image = ((System.Drawing.Image)(resources.GetObject("buttonAll.Image")));
-            this.buttonAll.Location = new System.Drawing.Point(332, 50);
+            this.buttonAll.Location = new System.Drawing.Point(347, 50);
             this.buttonAll.Name = "buttonAll";
             this.buttonAll.Size = new System.Drawing.Size(55, 37);
             this.buttonAll.TabIndex = 2;
             this.buttonAll.UseVisualStyleBackColor = true;
             this.buttonAll.Click += new System.EventHandler(this.buttonAll_Click);
             // 
+            // buttonDay
+            // 
+            this.buttonDay.FlatAppearance.BorderSize = 0;
+            this.buttonDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDay.Image = ((System.Drawing.Image)(resources.GetObject("buttonDay.Image")));
+            this.buttonDay.Location = new System.Drawing.Point(422, 50);
+            this.buttonDay.Name = "buttonDay";
+            this.buttonDay.Size = new System.Drawing.Size(55, 37);
+            this.buttonDay.TabIndex = 2;
+            this.buttonDay.UseVisualStyleBackColor = true;
+            this.buttonDay.Click += new System.EventHandler(this.buttonDay_Click);
+            // 
+            // Year
+            // 
+            this.Year.AutoSize = true;
+            this.Year.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Year.Location = new System.Drawing.Point(418, 18);
+            this.Year.Name = "Year";
+            this.Year.Size = new System.Drawing.Size(69, 29);
+            this.Year.TabIndex = 0;
+            this.Year.Text = "2018";
+            // 
+            // PanelTasks
+            // 
+            this.PanelTasks.AutoScroll = true;
+            this.PanelTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.PanelTasks.Controls.Add(this.eachTask1);
+            this.PanelTasks.Location = new System.Drawing.Point(67, 96);
+            this.PanelTasks.Name = "PanelTasks";
+            this.PanelTasks.Size = new System.Drawing.Size(765, 337);
+            this.PanelTasks.TabIndex = 1;
+            // 
+            // eachTask1
+            // 
+            this.eachTask1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.eachTask1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.eachTask1.Location = new System.Drawing.Point(3, 3);
+            this.eachTask1.Name = "eachTask1";
+            this.eachTask1.Size = new System.Drawing.Size(367, 63);
+            this.eachTask1.TabIndex = 0;
+            // 
             // TaskViewPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.Controls.Add(this.PanelTasks);
             this.Controls.Add(this.panelTop);
             this.Name = "TaskViewPage";
             this.Size = new System.Drawing.Size(900, 450);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
+            this.PanelTasks.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -119,5 +143,7 @@
         private System.Windows.Forms.Button buttonDay;
         private System.Windows.Forms.Button buttonWeek;
         private System.Windows.Forms.Button buttonAll;
+        private System.Windows.Forms.FlowLayoutPanel PanelTasks;
+        private EachTask eachTask1;
     }
 }
