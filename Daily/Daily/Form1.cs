@@ -22,6 +22,8 @@ namespace Daily
             WorkManager.SortWork();//对全部事务进行排序
             bindingSource1.DataSource = GlobalVariable.AllWorks; //暂时把首页数据绑定为全部事务
             bindingSource4.DataSource = GlobalVariable.AllTasks;//把首页近期任务绑定为全部任务
+            this.timer1.Interval = 1000;
+            this.timer1.Start();
         }
         public Form1(DailyEntity dailyEntity) : this()
         {
@@ -190,7 +192,7 @@ namespace Daily
         {
             Form9 f9 = new Form9(this);
             f9.ShowDialog();
-        ｝
+        }
 
         //事务一览界面添加事务
         private void button12_Click(object sender, EventArgs e)
@@ -221,6 +223,30 @@ namespace Daily
             WorkManager.DelWork(workToDel);
             Renew();
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            foreach(WorkEntity we in GlobalVariable.AllWorks)
+            {
+                if (!we.IsEnd)
+                {
+
+                    TimeSpan ts1 = new TimeSpan(we.StartTime.Ticks);
+                    TimeSpan ts2 = new TimeSpan(DateTime.Now.Ticks);
+                    TimeSpan ts3 = ts2.Subtract(ts1); 
+                    double sumSeconds = System.Math.Abs(ts3.TotalSeconds);
+                    if (sumSeconds <= 0.5)
+                    {
+                        axWindowsMediaPlayer1.URL = @"C:\Users\13650\Desktop\DAOKO .mp3";
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                        Form10 f = new Form10(we);
+                        f.ShowDialog();
+                        axWindowsMediaPlayer1.close();
+                        we.IsEnd = true;
+                    }
+                }
+            }
         }
     }
 }
