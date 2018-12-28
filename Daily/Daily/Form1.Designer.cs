@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -673,6 +674,16 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label10);
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Controls.Add(this.numericUpDown2);
+            this.tabPage5.Controls.Add(this.numericUpDown1);
+            this.tabPage5.Controls.Add(this.label8);
+            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Controls.Add(this.button16);
+            this.tabPage5.Controls.Add(this.button15);
+            this.tabPage5.Controls.Add(this.textBox4);
+            this.tabPage5.Controls.Add(this.label6);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
@@ -680,6 +691,80 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "系统设置";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "TaskName";
+            this.dataGridViewTextBoxColumn7.HeaderText = "TaskName";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "EndTime";
+            this.dataGridViewTextBoxColumn9.HeaderText = "EndTime";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Level";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Level";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Content";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Content";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "IsEnd";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "IsEnd";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(159, 99);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "默认音乐：";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(328, 96);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(239, 25);
+            this.textBox4.TabIndex = 1;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(685, 91);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(93, 31);
+            this.button15.TabIndex = 2;
+            this.button15.Text = "浏览";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(420, 392);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(93, 50);
+            this.button16.TabIndex = 3;
+            this.button16.Text = "确定";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button12
             // 
@@ -884,7 +969,66 @@
             // 
             this.workEntityBindingSource1.DataSource = typeof(Daily.WorkEntity);
             // 
-
+// 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(159, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "提示次数：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(159, 260);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 15);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "提示间隔：";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(328, 176);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDown1.TabIndex = 6;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(328, 258);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 25);
+            this.numericUpDown2.TabIndex = 7;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(516, 178);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(22, 15);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "次";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(516, 260);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(22, 15);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "分";
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -920,6 +1064,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dailyEntityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workEntityBindingSource1)).EndInit();
             this.ResumeLayout(false);
+
 
         }
 
@@ -1002,7 +1147,21 @@
 
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
+
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Timer timer1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
 
     }
 }

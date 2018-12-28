@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -221,5 +222,50 @@ namespace Daily
             Renew();
 
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            foreach(WorkEntity we in GlobalVariable.AllWorks)
+            {
+                if (!we.IsEnd)
+                {
+
+                    TimeSpan ts1 = new TimeSpan(we.StartTime.Ticks);
+                    TimeSpan ts2 = new TimeSpan(DateTime.Now.Ticks);
+                    TimeSpan ts3 = ts2.Subtract(ts1); 
+                    double sumSeconds = (ts3.TotalSeconds);
+                    if (sumSeconds > 0)
+                    {
+                        if (sumSeconds < 60 * decimal.ToDouble(numericUpDown1.Value)*decimal.ToDouble(numericUpDown2.Value))
+                        {
+                            timer1.Interval = 60000 * Decimal.ToInt32(numericUpDown2.Value);
+                            timer1.Enabled = false;
+                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                            Form10 f = new Form10(we);
+                            f.ShowDialog();
+                            axWindowsMediaPlayer1.close();
+                            timer1.Enabled = true;
+                        }
+                        else
+                            we.IsEnd = true;
+                    }
+                }
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter= "常见音频文件(*.mp3;*.wav;*.wma;*.mid;*.asf)|*.mp3;*.wav;*.wma;*.mid;*.asf";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                textBox4.Text = openFileDialog1.FileName;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = openFileDialog1.FileName;
+            axWindowsMediaPlayer1.close();
+            tabControl1.SelectTab(0); //切换到第一个页面
+       
+        }
     }
 }
+
