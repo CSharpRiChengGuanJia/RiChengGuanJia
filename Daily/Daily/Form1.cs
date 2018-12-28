@@ -22,6 +22,8 @@ namespace Daily
             WorkManager.SortWork();//对全部事务进行排序
             bindingSource1.DataSource = GlobalVariable.AllWorks; //暂时把首页数据绑定为全部事务
             bindingSource4.DataSource = GlobalVariable.AllTasks;//把首页近期任务绑定为全部任务
+            axWindowsMediaPlayer1.URL = @"C:\Users\Vermouth\Desktop\music.mp3";
+            axWindowsMediaPlayer1.close();
             this.timer1.Interval = 1000;
             this.timer1.Start();
         }
@@ -235,18 +237,39 @@ namespace Daily
                     TimeSpan ts1 = new TimeSpan(we.StartTime.Ticks);
                     TimeSpan ts2 = new TimeSpan(DateTime.Now.Ticks);
                     TimeSpan ts3 = ts2.Subtract(ts1); 
-                    double sumSeconds = System.Math.Abs(ts3.TotalSeconds);
-                    if (sumSeconds <= 0.5)
+                    double sumSeconds = (ts3.TotalSeconds);
+                    if (sumSeconds > 0)
                     {
-                        axWindowsMediaPlayer1.URL = @"C:\Users\13650\Desktop\DAOKO .mp3";
-                        axWindowsMediaPlayer1.Ctlcontrols.play();
-                        Form10 f = new Form10(we);
-                        f.ShowDialog();
-                        axWindowsMediaPlayer1.close();
-                        we.IsEnd = true;
+                        if (sumSeconds < 60 * decimal.ToDouble(numericUpDown1.Value)*decimal.ToDouble(numericUpDown2.Value))
+                        {
+                            timer1.Interval = 60000 * Decimal.ToInt32(numericUpDown2.Value);
+                            timer1.Enabled = false;
+                            axWindowsMediaPlayer1.Ctlcontrols.play();
+                            Form10 f = new Form10(we);
+                            f.ShowDialog();
+                            axWindowsMediaPlayer1.close();
+                            timer1.Enabled = true;
+                        }
+                        else
+                            we.IsEnd = true;
                     }
                 }
             }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter= "常见音频文件(*.mp3;*.wav;*.wma;*.mid;*.asf)|*.mp3;*.wav;*.wma;*.mid;*.asf";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                textBox4.Text = openFileDialog1.FileName;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = openFileDialog1.FileName;
+            axWindowsMediaPlayer1.close();
+            tabControl1.SelectTab(0); //切换到第一个页面
+       
         }
     }
 }
