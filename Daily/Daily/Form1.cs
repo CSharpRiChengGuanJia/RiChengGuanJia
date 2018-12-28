@@ -15,6 +15,7 @@ namespace Daily
         //public GlobalVariable Global = new GlobalVariable();
         public DailyEntity thisDay = null; //当前界面对应的那天
         public List<TaskEntity> Recenttasks = new List<TaskEntity>();//近期任务
+        public List<Weekwork> wwk = new List<Weekwork>();
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace Daily
             WorkManager.SortWork();//对全部事务进行排序
             bindingSource1.DataSource = GlobalVariable.AllWorks; //暂时把首页数据绑定为全部事务
             bindingSource4.DataSource = GlobalVariable.AllTasks;//把首页近期任务绑定为全部任务
+            this.timer1.Interval = 1000;
+            this.timer1.Start();
         }
         public Form1(DailyEntity dailyEntity) : this()
         {
@@ -33,7 +36,8 @@ namespace Daily
             //bindingSource1.DataSource = new BindingList<WorkEntity>(thisDay.Works); //如果要排序，要转换成这种类
             //dataGridView1.Sort(dataGridView1.Columns[1], 0); //排序（会报错）
             bindingSource3.DataSource = GlobalVariable.AllWorks;  //这个是事务一览那个界面的列表
-            
+            //初始化一周日程
+            initWeekworks();
             //以下3个textbox是在“查看日历”里面的那3个框框
             textBox1.Text = thisDay.Year.ToString();
             textBox2.Text = thisDay.Month.ToString();
@@ -57,6 +61,7 @@ namespace Daily
             bindingSource3.DataSource = GlobalVariable.AllWorks;
             bindingSource4.DataSource = new List<TaskEntity>();
             bindingSource4.DataSource = GlobalVariable.AllTasks;
+            initWeekworks();
         }
 
         //获取选中行（事务）的id，用于检索事务
@@ -219,7 +224,75 @@ namespace Daily
             }
             WorkManager.DelWork(workToDel);
             Renew();
+        }
 
+        //初始化一周日程
+        public void initWeekworks()
+        {
+            foreach(Weekwork w in wwk)
+            {
+                w.Controls.Clear();
+            }
+            wwk.Clear();
+            wwk.Add(weekwork1);
+            wwk.Add(weekwork2);
+            wwk.Add(weekwork3);
+            wwk.Add(weekwork4);
+            wwk.Add(weekwork5);
+            wwk.Add(weekwork6);
+            wwk.Add(weekwork7);
+            int i = thisDay.WeekDay;
+            wwk[i].getworks(thisDay);
+            for(int j=i+1;j<=6;j++)
+            {
+                DateTime temp=new DateTime(thisDay.Year, thisDay.Month, thisDay.Day ).AddDays(j-i);
+                DailyEntity d = DailyManager.GetDaily(temp.Year,temp.Month,temp.Day);
+                wwk[j].getworks(d);
+            }
+            for(int j=i-1;j>=0;j--)
+            {
+                DateTime temp = new DateTime(thisDay.Year, thisDay.Month, thisDay.Day).AddDays(j - i);
+                DailyEntity d = DailyManager.GetDaily(temp.Year, temp.Month, temp.Day);
+                wwk[j].getworks(d);
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                this.textBox4.SelectedText = dialog.FileName;
+            }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            foreach (WorkEntity we in GlobalVariable.AllWorks)
+            {
+                if (!we.IsEnd)
+                {
+                    TimeSpan ts1 = new TimeSpan(we.StartTime.Ticks);
+                    TimeSpan ts2 = new TimeSpan(DateTime.Now.Ticks);
+                    TimeSpan ts3 = ts2.Subtract(ts1);
+                    double sumSeconds = System.Math.Abs(ts3.TotalSeconds);
+                    if (sumSeconds <= 0.5)
+                    {
+                        axWindowsMediaPlayer1.URL = textBox4.Text;
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                        Form10 f = new Form10(we);
+                        f.ShowDialog();
+                        axWindowsMediaPlayer1.close();
+                        if (we.count < (int)numericUpDown1.Value)
+                        {
+                            we.StartTime = DateTime.Now.AddMinutes((int)numericUpDown2.Value);
+                            we.count++;
+                        }
+                        else
+                            we.IsEnd = true;
+                    }
+                }
+            }
         }
     }
 }

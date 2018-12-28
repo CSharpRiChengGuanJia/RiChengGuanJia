@@ -16,7 +16,7 @@ namespace Daily
         {
             InitializeComponent();
         }
-        public Form10(WorkEntity we):this()
+        public Form10(WorkEntity we) : this()
         {
             label2.Text = we.WorkName;
             richTextBox1.Text = we.Content;

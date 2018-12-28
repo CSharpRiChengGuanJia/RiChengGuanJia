@@ -54,6 +54,10 @@ namespace Daily
         /// 是否已完成
         /// </summary>
         public bool IsEnd { get; set; }
+        /// <summary>
+        /// 提醒次数
+        /// </summary>
+        public int count { get; set; }
 
         #endregion
 
