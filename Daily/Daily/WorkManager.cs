@@ -32,7 +32,9 @@ namespace Daily
         public static bool AddWork(DailyEntity daily, WorkEntity work)
         {
             daily.Works.Add(work);
+            DailyManager.SortWorks(daily);
             GlobalVariable.AllWorks.Add(work);
+            WorkManager.SortWork();
             return true;
         }
         /// <summary>
@@ -51,7 +53,17 @@ namespace Daily
         {
             return true;
         }
-
+        //对事物排序
+        public static void SortWork()
+        {
+            var m = from n in GlobalVariable.AllWorks orderby n.StartTime select n;
+            List<WorkEntity> reworks = new List<WorkEntity>();
+            foreach(var n in m)
+            {
+                reworks.Add(n);
+            }
+            GlobalVariable.AllWorks = reworks;
+        }
         #endregion
 
         #region 构造函数

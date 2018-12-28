@@ -28,6 +28,7 @@ namespace Daily
         public static bool AddTask(TaskEntity task)
         {
             GlobalVariable.AllTasks.Add(task);
+            SortTasks();
             return true;
         }
         /// <summary>
@@ -45,7 +46,42 @@ namespace Daily
         {
             return true;
         }
-
+        
+        //对所有任务进行排序(重载)
+        public static void SortTasks()
+        {
+            var m = from n in GlobalVariable.AllTasks orderby n.EndTime select n;
+            List<TaskEntity> retasks = new List<TaskEntity>();
+            foreach (var n in m)
+            {
+                retasks.Add(n);
+            }
+            GlobalVariable.AllTasks = retasks;
+        }
+        public static void SortTasks(List<TaskEntity> list)
+        {
+            var m = from n in list orderby n.EndTime select n;
+            List<TaskEntity> retasks = new List<TaskEntity>();
+            foreach (var n in m)
+            {
+                retasks.Add(n);
+            }
+            list = retasks;
+        }
+        ///<summary>
+        ///筛选近期任务并排序
+        /// </summary>
+        public  static List<TaskEntity> ChooseTasks()
+        {
+            List<TaskEntity> choosentasks = new List<TaskEntity>();
+            DateTime now = DateTime.Now;
+            var m = from n in GlobalVariable.AllTasks where (n.EndTime - now).Days <= 3 orderby n.EndTime select n;
+            foreach(var n in m)
+            {
+                choosentasks.Add(n);
+            }
+            return choosentasks;
+        }
         #endregion
 
         #region 构造函数

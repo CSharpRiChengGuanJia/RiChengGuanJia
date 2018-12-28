@@ -12,7 +12,7 @@ namespace Daily
         /// 所有有事务的日期
         /// </summary>
         //public static Dictionary<string, DailyEntity> AllDailys { get; set; }
-
+        
         #region 静态函数
         /// <summary>
         /// 获取每日管理类
@@ -35,10 +35,23 @@ namespace Daily
             GlobalVariable.AllDailys.Add(str, daily);
             return true;
         }
-        /// <summary>
-        /// 获取一个Daily对象
+        ///<summary>
+        ///对每日事务进行排序
         /// </summary>
-        public static DailyEntity GetDaily(int year, int month, int day)
+        public static void SortWorks(DailyEntity thisDay)
+        {
+            var m = from n in thisDay.Works orderby n.StartTime select n;
+             List<WorkEntity> reworks = new List<WorkEntity>();
+            foreach (var n in m)
+            {
+                reworks.Add(n);
+            }
+            thisDay.Works = reworks;
+        }
+/// <summary>
+/// 获取一个Daily对象
+/// </summary>
+     public static DailyEntity GetDaily(int year, int month, int day)
         {
             string str = $"{year}Y{month}M{day}D";  //AllDailys这个dictionary里的key
             //先检索AllDailys里有没有存在这个key了

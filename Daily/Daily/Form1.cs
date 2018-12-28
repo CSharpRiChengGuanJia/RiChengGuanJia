@@ -14,20 +14,26 @@ namespace Daily
     {
         //public GlobalVariable Global = new GlobalVariable();
         public DailyEntity thisDay = null; //当前界面对应的那天
-
+        public List<TaskEntity> Recenttasks = new List<TaskEntity>();//近期任务
         public Form1()
         {
             InitializeComponent();
-            GlobalVariable.TestInit(); //先随便初始化几个事务，用来测试
+            GlobalVariable.TestInit();//先随便初始化几个事务，用来测试
+            WorkManager.SortWork();//对全部事务进行排序
             bindingSource1.DataSource = GlobalVariable.AllWorks; //暂时把首页数据绑定为全部事务
+            bindingSource4.DataSource = GlobalVariable.AllTasks;//把首页近期任务绑定为全部任务
         }
         public Form1(DailyEntity dailyEntity) : this()
         {
             thisDay = dailyEntity;//当前界面对应的那天
+            Recenttasks = TaskManager.ChooseTasks();//当前界面对应的近期任务
+            DailyManager.SortWorks(thisDay);//对一日事物进行排序
             bindingSource1.DataSource = thisDay.Works; //列表的数据绑定为这一天的事务集合
+            bindingSource2.DataSource = Recenttasks;//列表的数据绑定为最近的任务集合
             //bindingSource1.DataSource = new BindingList<WorkEntity>(thisDay.Works); //如果要排序，要转换成这种类
             //dataGridView1.Sort(dataGridView1.Columns[1], 0); //排序（会报错）
             bindingSource3.DataSource = GlobalVariable.AllWorks;  //这个是事务一览那个界面的列表
+            
             //以下3个textbox是在“查看日历”里面的那3个框框
             textBox1.Text = thisDay.Year.ToString();
             textBox2.Text = thisDay.Month.ToString();
@@ -47,8 +53,10 @@ namespace Daily
             //把数据源重新赋值一下就可以刷新了
             bindingSource1.DataSource = new List<WorkEntity>();
             bindingSource1.DataSource = thisDay.Works;
+            bindingSource2.DataSource = Recenttasks;
             bindingSource3.DataSource = new List<WorkEntity>();
             bindingSource3.DataSource = GlobalVariable.AllWorks;
+            bindingSource4.DataSource = GlobalVariable.AllTasks;
         }
 
         //获取选中行（事务）的id，用于检索事务
@@ -136,6 +144,12 @@ namespace Daily
         {
             Form4 f4 = new Form4(this);
             f4.ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form f5 = new Form5(this);
+            f5.ShowDialog();
         }
     }
 }
